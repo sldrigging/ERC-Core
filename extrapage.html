@@ -1,0 +1,311 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb" id="bread">
+  <div class="container">
+      <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+          [PAGE_FULLLINE]
+      </ol>
+  </div>
+</section>
+<!--END: BODY_HEADER-->
+<section class="page_header" id="page-header">
+  <div class="container">
+      <h1 id="heading" class="page_heading">
+        [htmlpage]
+      </h1>
+  </div>
+</section>
+<section id="extrapage" class="page-content"> 
+  <div class="container">
+    <div class="content-area">
+      <!--START: SUB_PAGES-->
+		<div class="container-sidbar"> 
+      <ul class="sub_pages">
+        <!--START: SUB_PAGES_FORMAT-->
+        <li><a href="infopage.asp?page=[id]&extra=[extra]">[sub_pages_title]</a></li>
+        <!--END: SUB_PAGES_FORMAT-->
+      </ul>
+      <!--END: SUB_PAGES_FORMAT-->
+      <div class="content">[content]</div>
+		</div> 
+    </div>
+  </div>
+</section>
+
+
+
+<script> 
+	
+//sorting functionality 
+const input = document.querySelector('#extrapage-knowledgeBase input');
+var list = document.querySelectorAll('.sub_pages-flex li');
+
+input.addEventListener('keyup', function(){
+	var text = this.value;
+
+  for(var i = 0; i < list.length; i++){
+	  console.log("tets",list[i]); 
+  	if (!list[i].innerText.toUpperCase().includes(text.toUpperCase())) {
+    	list[i].style.display = 'none';
+    } else {
+        list[i].style.display = 'block';
+    }
+  }
+
+});
+		//checks to see if no subpages then hides div if  no sub page 
+	
+
+	var checkEmptySubPage = document.getElementById("extrapage").innerHTML; 
+	var checkEmptySubPage = checkEmptySubPage.toString(); 
+	console.log(checkEmptySubPage); 
+
+</script>
+
+
+	
+<style>
+	
+	.chain-div {
+		padding-top: 8%; 
+	}
+	
+	.btn {
+		background: green; 
+		color: white; 
+		border-radius: 4px; 
+	}
+	
+	.h2-chain-pull {
+		color: azure; font-weight: 900; padding: 5% 0; line-height: 1.25;font-size: 2.5em; 
+	}
+	
+/*
+	.contact-bg {
+		height: 530px; 
+		background: url("/assets/images/knowledgebase/pull-your-chain-photo.jpg") no-repeat;
+		background-size: cover; 
+	}
+*/
+	
+	.sub-page-div {
+		min-height: 300px; 
+	}
+	
+	h2 {
+		padding: 0; 
+		
+	}
+	
+	.sub-page-divs {
+		list-style: none; 		
+	}
+	
+	.sub_pages-flex {
+		display: flex; 
+		margin: 9% 0; 
+		  flex-wrap: wrap;
+	}
+	
+	.sub_pages-flex li {
+		list-style: none; 
+		width: 25%; 
+		line-height: 40px; 
+	}
+	
+	.sub_pages-flex a {
+	    flex: 1 0 21%; /* explanation below */
+        margin: 5px;
+        height: 100px;
+      
+	}
+	
+	.active, .accordion:hover, .active-2 {
+		background: #f0f0f0; 
+	}
+	
+	
+	
+	.accordion, .accordion-2 {
+		width: 100%; 
+		background: #bcbcbc; 
+		padding: 0 5%;
+		transition: 0.4s;
+	}
+	
+	.accordion h2 {
+		color: #070707; 
+		margin: .5% 0; 
+	}
+	
+	
+	.knowledge-search {
+		width: 80%; 
+		padding: 15px; 
+		border-radius: 4px; 
+		color: gray
+	}
+	
+	.blue-bg {
+		width: 60%; 
+		margin-left: 20%; 
+		background: #0C172B; 
+		border-radius: 4px;
+	    position: absolute; 
+	    top: 568px; 
+		padding: 0% 0 3.5%; 
+		color: azure;  
+	}
+	
+	.blue {
+		background: #0C172B; 
+	}
+	
+	.header-image {
+		position: relative; 
+		    width: 100%;
+		
+	}
+	
+	.panel {
+  padding: 18px 18px;
+  background-color: white;
+  display: none; 
+  overflow: hidden;
+  max-height: 800px !important;   
+  width: 100%;
+		margin-left: 0; 
+  box-shadow: 1px 1px 3px; 
+}
+	
+	
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-top: -2.5%; 
+ 
+}
+	
+	.col-md-6 {
+		padding: 0; 
+	}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+	
+	.alert {
+		width: 100%; 
+	}
+	
+	.warning {
+		border: 8px red solid; 
+		width: 40%; 
+		margin-top: 5%; 
+	    border-radius: 4px; 
+	}
+	
+	.lead {
+		padding: 5%; 
+		background: red; 
+		color: white; 
+		margin-bottom: 0px; 
+	}
+	
+	.warning-body {
+		background: white; 
+		padding: 5%; 
+	}
+	
+	.dog {
+		margin-top: 15%; 
+	}
+	
+	.accordion-div  {
+		margin: 5%; 
+		
+	}  
+	
+	.site-footer .row {
+		margin: 0; 
+	}
+	
+	@media screen and (max-width: 1600px) {
+	
+		.sub_pages-flex {
+			margin: 15% 0; 
+		}
+		.accordion:after {
+			margin-top: -3%;
+		}
+		
+		.blue-bg  {
+			top: 400px; 
+		}
+	}
+	
+	
+		@media screen and (max-width: 1000px) {
+			.blue-bg {
+				top: 300px; 
+			}
+			
+			.sub_pages-flex li {
+				width: 50%; 
+			}
+			
+			.sub_pages-flex {
+				margin: 10%; 
+			}
+	
+	}
+		
+	@media screen and (max-width: 992px) {
+		.warning {
+			margin: 2.5% auto; 
+			width: 70%; 
+		}
+		
+		
+		
+		.dog {
+			display: none; 
+		}
+		
+		.accordion:after {
+		   margin-top: -4.5%; 	
+		  }
+		
+		.chain-div {
+			text-align: center; 
+		}
+		
+		}
+	
+</style>
+
+<script>
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+   
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  }); 
+  };
+	
+	
+
+</script>

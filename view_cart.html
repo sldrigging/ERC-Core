@@ -1,0 +1,1892 @@
+<section id="viewcart" class="viewcart-page-content page-content">
+
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">[frame_breadcrumb-home]</span></a></li>
+				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">[viewcart_header-text]</span></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+		  <a  id="continue-shopping-btn" href="[continue_url]">  <div class="continue-shopping" style="width: 25%; margin-bottom: 2.5%; border-radius: 4px; ">
+                            <i class="icon-left"></i> [viewcart_continue-shopping]
+                        </div></a>
+			<h1 class="page_heading">[viewcart_header-text]</h1>
+        <!--START: CATEGORY_HEADER-->
+        <div class="category-header" id="viewCartHeader">[CONTENT]</div>
+        <!--END: CATEGORY_HEADER--> 
+    </div>
+</section>
+
+	<section class="cart-details">
+        <form action="shipquote.asp" method="post" name="shipquote" onSubmit="return submitForm();">
+            <input type="hidden" name="thispage" value="" />
+            <input type="hidden" name="shipping_zip" value="[shipping_zip]" />
+            <script type="text/javascript">document.shipquote.thispage.value = window.location.href;</script>
+        </form>
+        <form action="recalculate.asp" method="post" name="recalculate" id="recalculate" data-parsley-validate>
+            <div class="container">
+                <div class="row">
+                    <div class="cart-left col-lg-9 col-md-8">
+    <div id="mobile-order-summary" style="padding: 10px;  background-color: #fff;">
+                                <div class="order-summary">
+                                    <h4>Order Summary</h4>
+						
+                                </div>
+    
+                                <div class="row subtotal-details carttotal-cols">
+                                    <div class="col-xs-6 carttotal-label">[shoppingcart_subtotal]</div>
+                                    <div class="col-xs-6 carttotal-price" id="test">[CARTSUBTOTAL]</div>
+									
+									<script> 
+									var x = [CARTSUBTOTAL] + ; 
+									document.getElementById("test").innerhtml(x); 
+								
+									</script>
+								 
+                                </div>
+    
+                                <!--START: DISCOUNTS-->
+                                <div class="row discount-details carttotal-cols">
+                                    <div class="col-xs-6 carttotal-label">[checkout1_discounts]</div>
+                                    <div class="col-xs-6 carttotal-price">[DISCOUNTS]</div>
+                                </div>
+                                <!--END: DISCOUNTS-->
+    
+                                <div class="row total-details carttotal-cols">
+                                    <div class="col-xs-6 carttotal-label">[shoppingcart_total]</div>
+                                    <div class="col-xs-6 carttotal-price">[CARTTOTAL]</div>
+                                </div>
+							
+								
+    
+                                <div class="checkout-btns" style="margin:10px 0">
+                                    <a href="checkout.asp?step=1" class="btn btn-primary btn-checkout">[viewcart_checkout-button]</a>
+                                </div>
+		
+<!--
+		<span data-toggle="modal" data-target="#message1"> 
+											<a id="same-day-div-2" style="padding:0;  text-align: left;" type="button" class="btn btn-secondary shipping-tooltip" data-toggle="tooltip" data-placement="left" data-template="<div class='tooltip' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'></div></div>" title="Orders ship same day if placed before 2PM CT. All items in your cart must be listed as In Stock. Place separate orders on in-stock and back ordered items if you want same day shipping. Applies to UPS shipping methods only, LTL Freight may go out same day if carrier pick-up schedule permits.">
+												<h3 style="display: inline;">Orders Ship Same Day!  </h3><i class="material-icons" style="color:#0C172B; font-size: 18px !important; vertical-align: middle">
+												info
+												</i>
+											</a>									
+									   </span>
+-->
+								
+		
+								
+
+							<a id="same-day-div" style="padding:0;  text-align: left;" type="button" class="btn btn-secondary shipping-tooltip" data-toggle="tooltip"  tabindex="0" data-placement="left" data-animation="true" data-template="<div class='tooltip' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'></div></div>" title="Orders  ship same day if placed before 2PM CT. All items in your cart must be listed as In Stock. Place separate orders on in-stock and back ordered items if you want same day shipping. Applies to UPS shipping methods only, LTL Freight may go out same day if carrier pick-up schedule permits.">
+							<h3 style="display: inline;">Most Orders Ship Same Day!   </h3><i class="material-icons" style="color:#0C172B; font-size: 18px !important;">
+								info
+								</i>
+								</a>
+
+															
+
+		<div class="mobile-only-cart" id="same-day-mobile">				
+	   			<span ontouchstart="showShippingDiv()">
+					<h3 style="display: inline; padding:8px">Orders Ship Same Day!  </h3>
+					<i class="material-icons" style="color:#0C172B; font-size: 18px !important; vertical-align: middle">info</i></span>
+			
+				<div id="shipSameDay" style="display: none;">
+					<p style="display: inline; padding:5px">Orders ship same day if placed before 2PM CT. All items in your cart must be listed as In Stock. Place separate orders on in-stock and back ordered items if you want same day shipping. Applies to UPS shipping methods only, LTL Freight may go out same day if carrier pick-up schedule permits.</p>
+				</div>
+	    </div> 
+<hr>
+			<p><a href="/shipping-questions-or-assistance#submit-tax-exempt-paperwork">Are you tax exempt?</a></p>
+			<hr>
+			<script defer>
+			        function showShippingDiv() {
+						var shipDiv = document.getElementById("shipSameDay"); 
+						  if (shipDiv.style.display === "none") {
+    								shipDiv.style.display = "block";
+  						  } else {
+    						shipDiv.style.display = "none";
+  						}
+					}
+			</script>
+		   <!--START: savecart-->
+                                <div class="savecart text-left" style="margin-left: -10px;">
+                                    <a href="myaccount.asp?action=save_cart"><i class="icon-export"></i> [viewcart_save-cart]</a>
+                                </div>
+                                <!--END: savecart-->
+    
+                            </div>
+
+						
+		
+<!--
+										<a id="separate-orders-div" style="padding:0;  text-align: left;" type="button" class="btn btn-secondary shipping-tooltip" data-toggle="tooltip" data-placement="left" data-animation="true" data-template="<div class='tooltip' role='tooltip'><div class='arrow'></div><div class='tooltip-inner' style='font-size: 20px;></div></div>" title="
+Orders ship same day if placed before 2PM CT. All items in your cart must be listed as In Stock. Place separate orders on in-stock and back ordered items if you want same day shipping. Applies to UPS shipping methods only, LTL Freight may go out same day if carrier pick-up schedule permits.">
+<h3 style="display: inline;">How to Get Same Day Shipping</h3><i class="material-icons" style="color:#0C172B; font-size: 18px !important;">
+info
+</i>
+</a>
+-->
+		
+<!--
+		 <div class="mobile-only-cart" id="separate-orders-mobile">	
+		          <span ontouchstart="showShippingDiv()" class="mobile-tooltip-btn">How to Get Same Day Shipping!</span> <i class="material-icons" style="color:#0C172B; font-size: 18px !important;">info</i>
+					<div id="shipBackOrder" style="display: none; ">
+					<h3 style="display: inline;">Orders ship same day if placed before 2PM CT. All items in your cart must be listed as In Stock. Place separate orders on in-stock and back ordered items if you want same day shipping. Applies to UPS shipping methods only, LTL Freight may go out same day if carrier pick-up schedule permits.</h3>
+					</div>
+						</div> 
+-->
+						
+<!--
+			<script defer>
+			        function showShippingDiv() {
+						var shipDiv = document.getElementById("shipBackOrder"); 
+						  if (shipDiv.style.display === "none") {
+    								shipDiv.style.display = "block";
+  						  } else {
+    						shipDiv.style.display = "none";
+  						}
+					}
+			</script>	
+-->
+								
+								
+                             
+                        <div id="mobile-sticky-checkout" class="mobile-sticky-checkout order-summary" style="display: none">
+							
+                            <div class="summary-totals">
+                                Cart Subtotal ([ITEMSINCART] items): <span class="summary-totals-colors">[CARTSUBTOTAL]</span>
+                            </div>
+                            <div class="checkout-btns">
+                                <a href="checkout.asp?step=1" class="btn btn-primary btn-checkout">[viewcart_checkout-button]</a>
+                            </div>
+                        </div>
+   
+                        <ul class="cart-items">
+                            <li class="items-header">
+							
+                                <span class="item-name">[shoppingcart_items]</span>
+								
+                                <span class="item-price">[shoppingcart_price]</span>
+                                <span class="item-qty">[shoppingcart_quantity]</span>
+                                <span class="item-total">[shoppingcart_total]</span>
+                            </li>
+                            <!--START: SHOPPING_CART_ITEM-->
+                            <li class="cart-item">
+                                <span class="item-name clearfix">
+                                    <span class="item-thumb">
+                                        <!--START: itemthumbnail-->
+                                        <a class="thumbLink" id="thumbId" href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=100&maxy=0" class="img-responsive" alt="" /></a>
+                                        <!--END: itemthumbnail-->
+                                        <!--START: thumbnailnolink-->
+                                        <img src="thumbnail.asp?file=[THUMBNAIL]" class="img-responsive" alt="" />
+                                        <!--END: thumbnailnolink-->
+                                    </span>
+    
+                                    <span class="item-name-right">
+                                        <!--START: itemnamelink-->
+                                        <span class="item-fullname"><a href="product.asp?itemid=[ITEM_CATALOGID]">[ITEM_NAME]</a></span>
+                                        <!--END: itemnamelink--> 
+                                        <!--START: itemnamenolink-->
+                                        <span class="item-fullname">[ITEM_NAME]</span>
+                                        <!--END: itemnamenolink--> 
+    
+                                        <span class="item-actions">
+                                            <!--START: itemoptions_action-->
+                                            <span class="item-action">
+                                                <a href='#' class="view-options" data-target="#opt[ITEM_ID]">View/Hide options</a>
+                                            </span>
+                                            <!--END: itemoptions_action-->
+    
+                                            <!--START: giftwraplink-->
+                                            <span class="item-action giftwraplink">
+                                                <a data-itemid="[ITEM_ID]">[giftwrap_link]</a>
+                                            </span>
+                                            <!--END: giftwraplink-->
+    
+                                          
+											   <br> 
+												<span id="[stock]" class="item-price stock"><!--[availability_itemprop]--></span>
+										                    </span>
+	
+                    
+                                        <!--START: itemoptions--> 
+                                        <span id="opt[ITEM_ID]" name="opt[ITEM_ID]" class="itemoptions" style="display:none;">[OPTIONS]</span>
+                                        <!--END: itemoptions-->
+    
+                                        <!--START: recurring_frequency-->
+                                        <span class="recurring_frequency">This item will Autoship every <strong>[recurring_frequency]</strong></span>
+                                        <!--END: recurring_frequency--> 
+                                    </span>
+                                </span>
+							
+                                <span class="item-price">[ITEM_PRICE]    </span>
+                                <span class="quantity item-qty">
+                                    <span class="quant-input">
+                                        <input type="text" id="qtyItem[ITEM_ID]" name="qtyitemnum" value="[ITEM_QUANTITY]" placeholder="[ITEM_QUANTITY]" />
+                                        <input type="hidden" name="coliditemnum" value="[ITEM_ID]" />
+                                        <span class="qty-nav">
+                                            <button type="button" class="qty-up" data-target="#qtyItem[ITEM_ID]" onclick="outofstock()">+</button>
+                                            <button type="button" class="qty-down" data-target="#qtyItem[ITEM_ID]">-</button>
+                                        </span>
+                                    </span>
+                                    <a href="#" class="update-qty">[shoppingcart_updatecart]</a>
+                                </span>
+                                <span class="item-total">[ITEM_SUBTOTAL]</span>
+									 <span class="item-action del-span">
+                                                <a class="removeItem update-qty" href="#" onclick="document.recalculate.qtyitemnum.value=0;document.recalculate.submit();"><i class="icon-cancel"></i>Delete</a>
+                                 </span>
+                            </li>
+                            <!--END: SHOPPING_CART_ITEM-->
+                        </ul>
+    
+                        <div class="left-subtotal summary-totals">
+                            [shoppingcart_subtotal] ([ITEMSINCART] items): <span class="summary-totals-colors">[CARTSUBTOTAL]</span>
+                        </div>
+    
+                        <!--START: SHOPPING_CART_SHIPMENT_INFO-->
+                        <div class="cart-shipment-info">
+                            <h4>Ship To [name] [address]</h4> 
+                            <!--START: EDITADDRESS-->
+                            <div class="button left"><a href='edit_shipment.asp?shipmentid=[shipmentid]&action=editaddresses' class="icon-btn icon-btn-edit">Edit Address</a></div>
+                            <!--END: EDITADDRESS-->
+                        </div>
+                        <!--END: SHOPPING_CART_SHIPMENT_INFO-->
+
+                        <!--START: GIFTCERTIFICATES-->
+                        <section class="displayGiftCertificates">
+                            <div class="section-header">
+                                <h3 class="page_heading">[viewcart_giftcertificates-header]</h3>
+                            </div>
+
+                            <!--START: DISPLAY_GIFTCERTIFICATES-->
+                            <input id="gc_coupon_id_real" type="hidden" value="[id]" />
+
+                            <div class="row">
+                                <div class="col-sm-4 cert-name"><strong>[certificate_name]</strong></div>
+                                <div class="col-sm-4 cert-amount"><strong>Amount:</strong> [discount_amount]</div>
+                                <div class="col-sm-4 cert-remove">
+                                    <input id="gc_remove" type="button" value="Remove" class="btn btn-default" />
+                                </div>
+                            </div>
+                            <!--END: DISPLAY_GIFTCERTIFICATES-->
+                        </section>
+                        <!--END: GIFTCERTIFICATES-->
+
+    
+                        <!--START: FEATURE_MENU-->
+						
+                        <!--END: FEATURE_MENU-->
+    
+                    </div>
+                    <div id="cart-right" class="cart-right col-lg-3 col-md-4">
+                        <div id="cart-box" class="cart-div">
+    
+                            <div id="desktop-order-summary" style="background-color: #fff; padding: 20px">
+                                <div class="order-summary">
+                                    <h4>Order Summary</h4>
+						
+                                </div>
+    
+                                <div class="row subtotal-details carttotal-cols">
+                                    <div class="col-xs-6 carttotal-label">[shoppingcart_subtotal]</div>
+                                    <div class="col-xs-6 carttotal-price" id="test">[CARTSUBTOTAL]</div>
+									
+									<script> 
+									var x = [CARTSUBTOTAL] + ; 
+									document.getElementById("test").innerhtml(x); 
+									alert(x);
+									</script>
+								 
+                                </div>
+    
+                                <!--START: DISCOUNTS-->
+                                <div class="row discount-details carttotal-cols">
+                                    <div class="col-xs-6 carttotal-label">[checkout1_discounts]</div>
+                                    <div class="col-xs-6 carttotal-price">[DISCOUNTS]</div>
+                                </div>
+                                <!--END: DISCOUNTS-->
+    
+                                <div class="row total-details carttotal-cols">
+                                    <div class="col-xs-6 carttotal-label">[shoppingcart_total]</div>
+                                    <div class="col-xs-6 carttotal-price">[CARTTOTAL]</div>
+                                </div>
+							
+								
+    
+                                <div class="checkout-btns" style="margin: 8px 0">
+                                    <a href="checkout.asp?step=1" class="btn btn-primary btn-checkout">[viewcart_checkout-button]</a>
+                                </div>
+								
+												 <span data-toggle="modal" data-target="#message1"> 
+											<a id="same-day-div-2" style="padding:0;  text-align: left;" type="button" class="btn btn-secondary shipping-tooltip" data-toggle="tooltip" data-placement="left" data-template="<div class='tooltip' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'></div></div>" title="Orders ship same day if placed before 2PM CT. All items in your cart must be listed as In Stock. Place separate orders on in-stock and back ordered items if you want same day shipping. Applies to UPS shipping methods only, LTL Freight may go out same day if carrier pick-up schedule permits.">
+												<h3 style="display: inline;">Orders Ship Same Day!  </h3><i class="material-icons" style="color:#0C172B; font-size: 18px !important; vertical-align: middle">
+												info
+												</i>
+											</a>									
+									   </span>
+								<hr>
+								<p><a href="/shipping-questions-or-assistance#submit-tax-exempt-paperwork">Are you tax exempt?</a></p>
+								<hr>
+									<!-- Modal Message 1 -->
+										<div id="message1" class="modal fade" role="dialog">
+										  <div class="modal-dialog">
+
+											<!-- Modal content-->
+											<div class="modal-content">
+											  <div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Order Ships Same Day!!!</h4>
+											  </div>
+											  <div class="modal-body">
+												<p>Orders ship same day if placed before 2PM CT. All items in your cart must be listed as In Stock. Place separate orders on in-stock and back ordered items if you want same day shipping. Applies to UPS shipping methods only, LTL Freight may go out same day if carrier pick-up schedule permits.</p>
+											  </div>
+											  <div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											  </div>
+											</div>
+
+										  </div>
+										</div>
+								
+								
+								<!-- <span data-toggle="modal" data-target="#message2"> 
+									<a id="separate-orders-div-2" style="padding:0;  text-align: left;" type="button" class="btn btn-secondary shipping-tooltip" data-toggle="tooltip" data-placement="left" data-template="<div class='tooltip' role='tooltip'><div class='arrow'></div><div class='tooltip-inner' style='font-size: 20px;></div></div>" title="Orders ship same day if placed before 2PM CT. All items in your cart must be listed as In Stock. Place separate orders on in-stock and back ordered items if you want same day shipping. Applies to UPS shipping methods only, LTL Freight may go out same day if carrier pick-up schedule permits.">
+									<h3 style="display: inline;">How to Get Same Day Shipping</h3><i class="material-icons" style="color:#0C172B; font-size: 18px !important;">
+									info
+									</i>
+									</a>
+								</span> 
+								<!-- Modal Message 2 -->
+										<!--<div id="message2" class="modal fade" role="dialog">
+										  <div class="modal-dialog">
+
+											<!-- Modal content-->
+											<!--<div class="modal-content">
+											  <div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Important Info: How to Get Same Day Shipping</h4>
+											  </div>
+											  <div class="modal-body">
+												<p>Orders ship same day if placed before 2PM CT. All items in your cart must be listed as In Stock. Place separate orders on in-stock and back ordered items if you want same day shipping. Applies to UPS shipping methods only, LTL Freight may go out same day if carrier pick-up schedule permits.</p>
+											  </div>
+											  <div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											  </div>
+											</div>
+
+										  </div>
+										</div>-->
+								
+								
+								
+                                <!--START: savecart-->
+                                <div class="savecart" style="text-align: left; margin-left: -10px">
+                                    <a href="myaccount.asp?action=save_cart"><i class="icon-export"></i> [viewcart_save-cart]</a>
+                                </div>
+                                <!--END: savecart-->
+    
+                            </div>
+    
+                            <!--START: affirm_button-->
+                            <div class="affirm-as-low-as affirm-financing" data-promo-id="[affirmPromoId]" data-amount="[intTotal]"></div>
+                            <script>
+                              _affirm_config = {
+                                public_api_key:  "[affirmPublicKey]",
+                                script:          "[affirmJsUrl]"
+                              };
+                              (function(l,g,m,e,a,f,b){var d,c=l[m]||{},h=document.createElement(f),n=document.getElementsByTagName(f)[0],k=function(a,b,c){return function(){a[b]._.push([c,arguments])}};c[e]=k(c,e,"set");d=c[e];c[a]={};c[a]._=[];d._=[];c[a][b]=k(c,a,b);a=0;for(b="set add save post open empty reset on off trigger ready setProduct".split(" ");a<b.length;a++)d[b[a]]=k(c,e,b[a]);a=0;for(b=["get","token","url","items"];a<b.length;a++)d[b[a]]=function(){};h.async=!0;h.src=g[f];n.parentNode.insertBefore(h,n);delete g[f];d(g);l[m]=c})(window,_affirm_config,"affirm","checkout","ui","script","ready");
+                            </script>
+                            <div class="clear"></div>
+                            <!--END: affirm_button-->
+                            <!--START: klarna_button-->
+                                <div id="klarna_button">
+                                <!--START: klarna_button_script-->
+                                    <!--Klarna widget dynamically inserted-->
+                                <!--END: klarna_button_script-->
+                                </div>
+                            <!--END: klarna_button-->
+    
+                            <!--START: BUYSAFE_CONTROL-->
+                            <script type="text/javascript">
+                                function buySAFEOnClick(wantsbond) { 
+                                    document.location.href='view_cart.asp?wantsbond=' + wantsbond;
+                                }
+                            </script>
+                            <div class="buysafe-bond cart-detail-item">
+                                <h4>BuySafe</h4>
+                                <div class="cdi-msg">[buysafe_bondingsignal]</div>
+    
+                                <!--START: BUYSAFE_LEARNMORE-->
+                                <div class="cdi-msg"><a href="[buysafe_cartdetailsurl]" target="_buySAFE">[buysafe_cartdetailsdisplaytext]</a></div>
+                                <!--END: BUYSAFE_LEARNMORE-->
+    
+                                <!--START: BUYSAFE_BONDCOST-->
+                                <div class="center"><strong>[buysafe_bondcostdisplaytext]</strong></div>
+                                <!--END: BUYSAFE_BONDCOST-->
+                                
+                            </div>
+                            <!--END: BUYSAFE_CONTROL-->
+    
+                          <!--  <div id="thirdPartyPayment" class="checkout-options third-party-payment" style="display: none; !important">
+                                <span class="checkout-options-title"><span>Or checkout with:</span></span> --> 
+    
+                                <!--START: paypalexpress-->
+                              <!--         [PPEXPRESS_SCRIPTS_BLOCK]
+                                <div id="paypal-button"></div> --> 
+
+                                <!--END: paypalexpress-->
+
+
+								<!--START: stripe_applepay_button-->
+							 <!-- 	<div class="stripe_applepay ppale-button checkout-option">
+                                    [stripeApplePay]
+                                </div>  --> 
+								<!--END: stripe_applepay_button-->
+    
+
+                                <!--START: Google_Pay-->
+                              <!--    <div class="checkout-option">
+                                    [GooglePay]
+                                </div>  --> 
+                                <!--END: Google_Pay-->
+    
+                                <!--START: paypalcredit-->
+                              <!--    <div class="ppale-button checkout-option">
+                                    <a href="paypal_express.asp?ch=1&ppc=1" title="PayPal Credit"><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/ppcredit-logo-small.png" alt="PayPal Credit" /></a>
+                                    <a href="https://www.securecheckout.billmelater.com/paycapture-content/fetch?hash=AU826TU8&content=/bmlweb/ppwpsiw.html" alt="PayPal Credit" target="_blank"><img src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_bml_text.png" /></a>
+                                </div>  --> 
+                                <!--END: paypalcredit-->
+						    <!--  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <a href="/checkout_one.asp">  <div class="payment-methods"> <span alt="Paypal accepted" title="Paypal accepted"> <i class="fa fa-cc-paypal"></i> <span class="sr-only">PayPal</span>
+      <link itemprop="acceptedPaymentMethod" href="http://purl.org/goodrelations/v1#PayPal" />
+      </span> <span alt="VISA accepted" title="VISA accepted"> <i class="fa fa-cc-visa"></i> <span class="sr-only">Visa</span>
+      <link itemprop="acceptedPaymentMethod" href="http://purl.org/goodrelations/v1#VISA" />
+      </span> <span alt="MasterCard accepted" title="MasterCard accepted"> <i class="fa fa-cc-mastercard"></i> <span class="sr-only">MasterCard</span>
+      <link itemprop="acceptedPaymentMethod" href="http://purl.org/goodrelations/v1#MasterCard" />
+      </span> <span alt="Discover accepted" title="Discover accepted"> <i class="fa fa-cc-discover"></i> <span class="sr-only">Discover</span>
+      <link itemprop="acceptedPaymentMethod" href="http://purl.org/goodrelations/v1#Discover" />
+      </span> <span alt="American Express accepted" title="American Express accepted"> <i class="fa fa-cc-amex"></i> <span class="sr-only">American Express</span>
+      <link itemprop="acceptedPaymentMethod" href="http://purl.org/goodrelations/v1#AmericanExpress" />
+	   </span> </div></a> --> 
+                                <!--START: paypalexpress_braintree-->
+                              <!--    <div id="divpaypalexpress_braintree" class="ppale-button checkout-option"></div>
+                                <input type="hidden" id="ppb_clientToken" value="[PaypalBraintree_clientToken]" />
+                                <input type="hidden" id="ppb_global_order_subtotal" value="[global_order_subtotal]" />
+                                <input type="hidden" id="ppb_currency_code" value="[currency_code]" />
+                                <input type="hidden" id="ppb_single_use" value="[PaypalBraintree_single_use]" />--> 
+                                <!--END: paypalexpress_braintree-->
+    
+                                <!--START: PayWithAmazon-->
+                               <!--   <div id="AmazonPayButton" class="checkout-option"></div>--> 
+                                <!--END: PayWithAmazon-->
+    
+                                <!--START: checkoutByAmazon-->
+                               <!--   <div class="chkamazon-button checkout-option">[amazon_cba_form]</div>--> 
+                                <!--END: checkoutByAmazon-->
+    
+                                <!--START: checkoutMasterPass-->
+                             <!--     <div class="checkout-option">
+                                    <div class="masterpass-button">
+                                        <a href="masterpass.asp?ac=token" title="Checkout with MasterPass&trade;"><img id="imgMasterPass" src="https://www.mastercard.com/mc_us/wallet/img/mcpp_wllt_btn_chk_147x034px.png" alt="Checkout with MasterPass&trade;" /></a>
+                                    
+                                    </div>
+                                </div>--> 
+                                <!--END: checkoutMasterPass-->
+    
+                                <!--START: checkout_visacheckout-->
+                               <!--    <div class="checkout-option">--> 
+									<!--START: checkout_visacheckout-->
+									<div id="divBusy" class="center"><img src='../assets/templates/common/images/ajax-loader.gif'><br /></div>
+									<!--START: visacheckout_jscript-->
+									<!--START: visacheckoutclickjack-->
+							     <!-- 		<style id="antiClickjack">
+									body {
+										display: none;
+									}
+									</style>
+									<script type="text/javascript">
+										if (self === top) {
+											var antiClickjack = document.getElementById("antiClickjack");
+											if (antiClickjack)
+												antiClickjack.parentNode.removeChild(antiClickjack);
+										} else {
+											top.location = self.location;
+										}
+									</script>
+									<!--END: visacheckoutclickjack-->
+								     <!-- 	<script type="text/javascript">
+										function onVmeReady() {
+											//alert(apiKey);
+											var apiKey = '[visacheckout_api_key]';
+											var dataq = '';
+
+											V.init({
+												apikey: apiKey,
+												externalClientId: '[visacheckout_externalclientid]',
+												sourceId: "",
+												settings: {
+													locale: "[visacheckout_locale]",
+													countryCode: "[visacheckout_country]",
+													displayName: "[storename]",
+													logoUrl: "[visacheckout_logourl]",
+													websiteUrl: "[visacheckout_domainname]",
+													shipping: {
+														acceptedRegions: [[visacheckout_shippingcountries]],
+														collectShipping: "[visacheckout_collectshipping]"
+													},
+													payment: {
+														cardBrands: [[cardsaccepted]],
+														acceptCanadianVisaDebit: "[visacheckout_acceptcanadadebitcard]"
+													},
+													review: {
+														buttonAction: "Continue"
+													},
+													dataLevel: "FULL"
+												},
+												paymentRequest: {
+													merchantRequestId: "[visacheckout_orderid]",
+													currencyCode: "[currency_code]",
+													subtotal: "[visacheckout_amount]",
+													total: "[visacheckout_amount]"
+												}
+											}
+											);
+											V.on("payment.success", function (payment) {
+
+												dataq = JSON.stringify(payment);
+												//document.write(dataq);
+												jQuery('#divBusy').show();
+
+												jQuery.ajax({
+													url: 'visacheckout.asp',
+													data: 'jdata=' + dataq + '&ac=unpackdata',
+													dataType: 'json',
+													type: 'post',
+													cache: false,
+													error: reportRuleError
+												})
+												.done(function (response) {
+													if (response.k == null)
+														alert('No response from VISA Checkout.  Try again or use another payment method.');
+													else {
+														window.location = 'checkout_one.asp?k=' + response.k + '&wid=' + response.wid;
+													}
+												})
+													.fail(function (strResult) {
+														jQuery("#divBusy").hide();
+														alert('VISA Checkout Process call failed');
+													});
+
+											});
+
+											V.on("payment.cancel", function (payment) {
+												jQuery("#divBusy").hide();
+												alert("VISA Checkout Payment method selection canceled.");
+											});
+
+											V.on("payment.error", function (payment, error) {
+												jQuery("#divBusy").hide();
+												alert("Problem encountered with VISA Checkout service");
+											});
+
+										}
+
+										function reportRuleError(jqXHR, textStatus) {
+											if (jqXHR.status > 0) {
+												alert("Error processing VISA Checkout request ");
+											}
+										}
+									</script>
+									<script type="text/javascript">
+										function getElementById_s(id) {
+											var obj = null;
+											if (document.getElementById) {
+												obj = document.getElementById(id);
+											} else if (document.all) {
+												obj = document.all[id];
+											}
+											return obj;
+										}
+
+										function remove_overlay(panel) {
+											var objBody = getElementById_s('overlay_' + panel);
+											if (objBody != null && objBody != 'null' && objBody != undefined && objBody != 'undefined')
+												objBody.style.display = 'none';
+										}
+
+										function add_vme_overlay(panel) {
+											var objBody = getElementById_s(panel);
+											var objOverlay = document.createElement("div");
+
+											objOverlay.setAttribute('id', 'overlay_' + panel);
+											objOverlay.className = 'overlay';
+											objOverlay.style.position = 'absolute';
+											objOverlay.style.textAlign = 'center';
+											objOverlay.style.width = objBody.clientWidth + "px";
+											objOverlay.style.height = objBody.clientHeight + "px";
+											objBody.insertBefore(objOverlay, objBody.firstChild);
+											objOverlay.style.display = 'block';
+
+											get_Element('overlay_' + panel).innerHTML = '<table border=\"0\" width=\"100%\"><tr><td style=\"text-align: left;\"><div style=\"margin:10px 0px 0px 0px;\"><img src=\"assets/templates/common/images/loading.gif\"></div></td></tr></table>';
+										}  --> 
+									</script>
+									<!--END: visacheckout_jscript-->
+                                 <!--   <div class="visacheckout-button">
+										<img alt="Visa Checkout" class="v-button" role="button"
+										src="[visacheckout_button]"/>
+                                        <script type="text/javascript"	src="[visacheckout_jscriptsdk]"></script>
+										<br />&nbsp;
+                                    </div>
+                                </div> --> 
+                                <!--END: checkout_visacheckout-->
+    
+                                <!--START: INTERNATIONAL_CHECKOUT-->
+                                    <!--    <div class="checkout-option">
+                                    <div class="intchk-button">
+                                        <a href="internationalcheckout.asp" title="International Checkout">
+                                            <img src="assets/templates/common/images/international_checkout.gif" alt="International Checkout" />
+                                        </a>
+                                    </div>
+                                </div>--> 
+                                <!--END: INTERNATIONAL_CHECKOUT-->
+    
+    
+                                <!--START: BONGO_INTERNATIONAL-->
+                              <!--    <div class="checkout-option">
+                                    <div class="bongoint-button">
+                                        <a href="bongointernational.asp">
+                                            <img style="cursor:pointer;max-width:100%;" src="https://bongous.com/partner/images/Bongo_Checkout_Button.png" alt="Bongo International" />
+                                        </a>
+                                    </div>
+                                </div>--> 
+                                <!--END: BONGO_INTERNATIONAL-->
+
+                                <!--START: BreadCheckoutViewCart-->
+                                <script>
+                                    //////////////////////////////////////////////////////////////////////////////////////////////////
+                                    //Customize the Bread Checkout Experience
+                                    //////////////////////////////////////////////////////////////////////////////////////////////////
+                                    // Reference
+                                    // https://docs.getbread.com/docs/integration/shopify/customize-experience/#style-the-bread-button
+                                    // https://docs.getbread.com/docs/manual-integration/button-styling/#button-structure
+                                    //
+                                    // leave this variable blank in order to use default Bread Checkout Styles
+                                       var BreadCheckoutCustomStyleCSS = ''; 
+                                    //
+                                    // or to use a custom CSS - All CSS values contained in quotes should use double quotes - example:
+                                    // var BreadCheckoutCustomStyleCSS = '@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);#bread-button,body,html{height:100%;margin:0;width:100%}body{display:table}#bread-button{background:#EEE;color:#181818;display:table-cell;font-family:"Open Sans",sans-serif;font-size:16px;text-align:center;vertical-align:middle}.bread-text{cursor:pointer;text-decoration:underline;transition:all .2s ease}.bread-text:hover{color:#197797}.bread-dur{text-transform:lowercase;word-spacing:-3px;margin-left:-3px}.bread-embed-inner,.bread-label .bread-embed-icon{display:inline-block}.bread-btn .bread-as-low-as:before,.bread-label .bread-as-low-as:before{content:"As low as "}.bread-btn .bread-for:before{content:"For "}';
+                                    ///////////////////////////////////////////////////////////////////////////////////////////////////
+                                </script>
+                                <div class="checkout-option">
+                                    <div id="bread-label" data-bread-default-size="true"></div>
+                                </div>
+                                [BREADCHECKOUT_SCRIPTS_BLOCK]
+                                <!--END: BreadCheckoutViewCart--> 
+
+    
+                                <!--START: shopatron-->
+                                <div class="checkout-option">
+                                    <div class="shopatron-button">
+                                        <a href="shopatron.asp" class="btn btn-default" style="font-size: 12px;">Checkout with Shopatron</a>
+                                    </div>
+                                </div>
+                                <!--END: shopatron-->
+                            
+			 
+							   <!--START: ShipQuote-->
+                            <div id="shipping" class="ShipQuote cart-detail-item">
+                                <h4 class="module-expand" data-target="#ShipQuote-module">[viewcart_shipping-header] test</h4>
+                                <div id="ShipQuote-module" class="module-content">
+                                    <div class="cdi-msg">[viewcart_shipping-message]</div>
+                                    <div class="zip-code clearfix">
+                                        <input type="text" name="shipping_zip" value=""  class="form-control" id="calculate_shipping_zip">
+                                        <button type="button" class="btn btn-default" id="calculate_button_go">Calculate</button>
+                                    </div>
+                                    <!--START: viewcart_ship-->
+									
+                                    <div class="shipquote-result-location">[shipping_city] <span id="[shipping_state]"> [shipping_state] </span> [shipping_zip]</div>
+									<div class="shipquoteint-action">
+										<div class="form-group test">
+											<form class="selectpicker form-control">
+											<!--START: Shippers-->
+											<input type="radio" value="[OPTION-PRICE]" name="shipping-option"><strong>[OPTION-SHIPPER]</strong> <em>[OPTION-DESCRIPTION]</em><span class="shipping-price-cart" [OPTION-PRICE] </span>
+											<!--END: Shippers-->
+											</form>
+										
+											
+										</div>
+										<button id="ShipQuote-clear" type="button" class="btn btn-default clearValues">Clear</button>
+									</div>
+                                    <!--END: viewcart_ship--> 
+                                </div>
+                            </div>
+                            <!--END: ShipQuote-->
+    <!--START: ShipQuoteInternational-->
+                            <div class="shipQuoteInt cart-detail-item">
+                                <h4 class="module-expand" data-target="#shipQuoteInt">[viewcart_shipping-header]</h4>	
+<!--    							<h4>[viewcart_shipping-header]</h4>-->
+                                <div id="shipQuoteInt" class="module-content" style="display:block">
+									
+                                 <div class="cdi-msg">[viewcart_shipping-message]</div>
+                                    <div class="shipquoteint-location">
+                                         <div class="col-xs-12">
+                                                <select name="shipping_country" class="selectpicker form-control" id="shipping_country"></select>
+                                            </div>
+                                       
+                                        <div class="form-group row">
+                                            <div class="col-xs-12">
+                                                <select id="shipping_state" name="shipping_state" class="selectpicker form-control"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="shipquoteint-action zip-code clearfix">
+                                        <input placeholder="Enter Zip Code" type="text" name="shipping_zip" value="[shipping_zip]" class="form-control" id="calculate_shipping_zip" />
+                                        <button type="button" class="btn btn-default" id="calculate_button_go">Calculate</button>
+										  
+                                    </div>
+                                     
+                                </div>
+                                <!--START: viewcart_ship-->
+							
+                                <div class="shipquoteint-result-location">[shipping_city] <span id="[shipping_state]"> [shipping_state] </span> [shipping_zip]</div>
+                                <div class="shipquoteint-action">
+                                    <div class="form-group">
+										
+                                     	
+											
+                                        <!--START: Shippers-->
+                                       <label class="shipping-label"><input value="[OPTION-PRICE]" id="[OPTION-PRICE]" type="radio" class="shipping-choice" name="shipping-selection"><strong>[OPTION-SHIPPER]</strong> <em>[OPTION-DESCRIPTION]</em><span id="shippingPrice" class="shipPrice" style="display:block"> [OPTION-PRICE]</span>
+											<span class="eta-append"><div style="display:block; font-weight: bold">Estimated Delivery</div></span> 
+										
+										
+									
+                                     			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+											$(document).ready(function(){
+													
+												
+											$('input:radio[name="shipping-selection"]').change(
+														function () {
+                          
+   														var test = $(this).val();         
+  			                        
+														}); 
+														}); 
+											
+                                           
+											
+											</script>
+										
+										</label> 	
+                                    	
+								
+												
+
+
+                                        <!--END: Shippers-->
+										
+									
+										
+								
+										
+									
+                                    <input id="shipquoteint-clear" type="button" class="btn btn-default clearValues" value="Clear" />
+                                </div>
+											
+                                <!--END: viewcart_ship-->
+                            </div>
+								
+<script>
+   
+	
+	
+  var shippingLabel = document.getElementsByClassName("shipping-label");
+	//loop through all labels, remove dollar sign then add to array 
+	for (var x = 0; x < shippingLabel.length; x++) {
+
+		var shipPrice = document.getElementsByClassName("eta-append")[x];
+		var shippingLabelText = document.getElementsByClassName("shipping-label")[x];
+		
+		
+		var threeDay = shippingLabelText.innerHTML.includes("3 Day");  
+        var upsGround = shippingLabelText.innerHTML.includes("Ground");
+		
+		var surePost = shippingLabelText.innerHTML.includes("Surepost"); 
+		var day = shippingLabelText.innerHTML.includes("Next"); 
+		var twoDay = shippingLabelText.innerHTML.includes("2nd"); 
+		var save = shippingLabelText.innerHTML.includes("Saver")
+	   
+	   // var headerText = document.createTextNode("Estimated Arrival"); 
+		
+		
+		if(threeDay === true)
+		{  
+				var priceSpan = document.getElementsByClassName("eta-append")[x];
+				var threeDay = document.createElement("div");
+				priceSpan.appendChild(threeDay);
+				threeDay.id = "Three-Day-Select"; 
+
+	
+			    
+		} else if (upsGround === true) {
+			  // for (z = 0; z < 2; z++) {
+			   var priceSpan = document.getElementsByClassName("eta-append")[x];
+			   var upsLow = document.createElement("div");
+			   var upsHigh = document.createElement("div");
+			   var upsOne = document.createElement("div");
+			   var dash = document.createElement("div");
+			   var dashText = document.createTextNode(" - ");
+			   dash.style.display = "inline-block"; 
+			   dash.style.padding = "0px 10px"; 
+			   upsHigh.style.display = "inline-block"; 
+			   upsLow.style.display = "inline-block"; 
+			   dash.appendChild(dashText);
+			
+			   priceSpan.appendChild(upsLow);
+			   priceSpan.appendChild(dashText); 
+			   priceSpan.appendChild(upsHigh);
+			   priceSpan.appendChild(upsOne);
+
+			   upsLow.id = "UPS-Low"; 
+			   upsHigh.id = "UPS-High"; 	
+			   upsOne.id = "UPS-Ground-One"; 
+			//   }
+			
+			
+		} else if (twoDay === true) {
+		    
+			var priceSpan = document.getElementsByClassName("eta-append")[x];
+			var twoDay = document.createElement("div");
+			priceSpan.appendChild(twoDay);
+			twoDay.id = "Two-Day-Air";  
+			twoDay.classList.add("eta-header"); 
+			
+		} else if (save === true) {
+			
+			var priceSpan = document.getElementsByClassName("eta-append")[x];
+		
+			
+			var day2 = document.createElement("div");
+			priceSpan.appendChild(day2); 
+			day2.id = "UPS-Next-Day-Saver"; 
+			day2.classList.add("eta-header"); 
+			
+		} else if (surePost === true) {
+		    
+			var priceSpan = document.getElementsByClassName("eta-append")[x];
+			var surePost = document.createElement("div");
+	        var sureBottom = document.createElement("div");
+			var dash = document.createElement("div");
+			var dash = document.createElement("div");
+			var dashText = document.createTextNode(" - ");
+			dash.style.display = "inline-block"; 
+			dash.style.padding = "0px 10px"; 
+			surePost.style.display = "inline-block"; 
+			sureBottom.style.display = "inline-block"; 
+			dash.appendChild(dashText); 
+	        priceSpan.appendChild(sureBottom);
+			priceSpan.appendChild(dash); 
+			priceSpan.appendChild(surePost);
+			surePost.id = "surepost"; 
+			sureBottom.id = "surepostBottom"; 
+		
+		}  else if (day === true) {
+		    
+			var priceSpan = document.getElementsByClassName("eta-append")[x];
+			var day = document.createElement("div");
+			priceSpan.appendChild(day); 
+			day.id = "UPS-Next-Day"; 
+			 
+		}
+	
+	/*    var etaHeader = document.getElementsByClassName("eta-header");
+		for (q = 0; q < etaHeader.length; q++) {
+			    
+			    var prependClass = document.getElementsByClassName("eta-header")[q];
+				var headerDiv = document.createElement("p");
+			    var headerText = document.createTextNode("Estimated Arrival"); 
+			    headerDiv.appendChild(headerText); 
+			    prependClass.prependChild(headerDiv); 
+		}*/  
+		
+		
+		
+		
+			}						
+								
+</script>
+						
+	<div style="visibility: hidden" id="UPS-Next-Day-Saver"></div>
+								<div style="visibility: hidden" id="UPS-Next-Day"></div>
+								<div style="visibility: hidden" id="Two-Day-Air"></div>
+								<div style="visibility: hidden" id="Three-Day-Select"></div>
+								<div style="visibility: hidden" id="surepost"></div>
+								<div style="visibility: hidden" id="surepostBottom"></div>
+								<div style="visibility: hidden"  id="UPS-Low"></div>
+							 <div  style="visibility: hidden" id="UPS-High"></div>
+								<div style="visibility: hidden" id="upsOneDay"></div>
+                                <div style="visibility: hidden" id="UPS-Next-Day-Saver"></div>
+<script> 
+
+
+
+//array with shipping + states 
+var states1 =  ["1", "LA", "MS"] 
+var states2 =  ["1" , "2", "AL"]
+var states3 =  ["2", "GA", "KY", "NC", "OK", "SC", "TN", "TX"]
+var states4 =  ["2", "3", "FL", "IL", "IN", "MO" ]; 
+var states5 =  ["3", "DE", "IA", "KS", "MD", "MI", "MN", "NM", "OH", "PA", "VA", "WV", "WI"]; 
+var states6 =  ["3", "4", "CO", "WY"]; 
+var states7 =  ["4", "AK", "CT", "MA", "NH", "NJ", "NY", "ND", "RI", "UT", "VT"]
+var states8 =  ["4", "5", "CA"]; 
+var states9 =  ["5", "HI", "MT", "OR", "WA"]; 
+var userState = document.getElementById("[shipping_state]").textContent.toString();
+
+
+var correctArray; 
+	
+//searches arrays that stores dates and states that matches the users input 
+     if(states1.includes("[shipping_state]") === true) {
+        correctArray = states1; 
+		
+     } else if(states2.includes("[shipping_state]") === true) {
+          correctArray = states2; 
+     } else if(states3.includes("[shipping_state]") === true) {
+           correctArray = states3; 
+     } else if(states4.includes("[shipping_state]") === true) {
+         correctArray = states4; 
+     } else if(states5.includes("[shipping_state]") === true) {
+         correctArray = states5; 
+     } else if(states6.includes("[shipping_state]") === true) {
+         correctArray = states6; 
+     } else if(states7.includes("[shipping_state]") === true) {
+         correctArray = states7; 
+     } else if(states8.includes("[shipping_state]") === true) {
+         correctArray = states8; 
+     } else if(states9.includes("[shipping_state]") === true) {
+         correctArray = states9; 
+     } 
+
+	
+console.log(correctArray); 	
+
+var correctArray = correctArray; 
+var today = new Date(); 
+var estimatedArrival = [];
+var estimatedArrival0 = []; 
+var estimatedArrival1 = []; 
+var shippingDay = [];   
+var shipnum; 
+var lowSurePostRange; 
+
+
+//loops through correct array and removes integers
+//also pulls out smallest integer to calculate lower surepost range 
+for (var y = 0; y < correctArray.length; y++) {
+    var items = correctArray[y];
+    var shipnum = items.replace(/[^0-9]+/g, "");
+    shippingDay.push(shipnum);   
+} 
+
+var filteredShippingDay = shippingDay.filter(function (el) {
+  return el != ""; 
+}); 
+
+
+	
+//set variable to earlier of two shipping days in array 
+//find lowest date from the array to calculate the bottom range of sure post 
+let lowRangeSurePost = Math.min(...filteredShippingDay); 
+lowRangeSurePost += 1; 
+
+var lowerNumberTwoDates = lowRangeSurePost - 1; 
+var twoDates = []
+
+
+// new date for checking range 
+     var date = today.getDate(); 
+     var month = today.getMonth(); 
+     var day = today.getDay(); 
+     var month = month + 1; 
+     var upsOneDay = 0; 
+     var upsLowDay; 
+     var upsHighDay; 
+	  var items;
+//check if there is a two day date range or one day range 
+if(filteredShippingDay.length === 1) {
+
+ 
+    
+      var items = filteredShippingDay[0]; 
+      twoDates.push(items); 
+      var assign1 = twoDates[0]; 
+      [upsOneDay] = [assign1];
+      upsOneDay = parseInt(upsOneDay);
+      var estimatedArrival = +date + +items;    	  
+	  var estimatedArrival = month + "-" + estimatedArrival;     
+      var dateRange = estimatedArrival; 
+  
+   //   document.getElementById("UPS-Ground").innerHTML = dateRange;
+    
+
+	
+
+
+  } else {
+      //code for if there are two days for eta      
+      for (var b = 0; b < 2; b++) {
+      //goes through array with shipping days 
+      var items = filteredShippingDay[b];
+ 
+       twoDates.push(items);
+
+      estimatedArrival[b] = +date + +items; 
+      var assign1 = twoDates[0]; 
+       
+      var assign2 = twoDates[1]; 
+      [upsLowDay,  upsHighDay] = [assign1, assign2]
+       upsHighDay = parseInt(upsHighDay);  
+       upsLowDay = parseInt(upsLowDay);  
+      //item[b] = filteredShippingDay[b]; 
+       //spits out two different dates  
+      var dateRange2 = month + "-" + estimatedArrival[0]; 
+      var dateRange3 = month + "-" + estimatedArrival[1]; 
+
+ 
+
+  }
+    
+  }
+
+
+   var newDate = new Date(); 
+   var differenceInTime; 
+   var  differenceInDay; 
+
+
+ // two day shipping 
+    var differenceInDay; 
+    var newDate = new Date(); 
+    var twoDayDate  = new Date(); 
+  
+
+   //finds current date of each shipping type 
+   function setRange(num) {
+   var privateDate = new Date(); 
+   var range = privateDate.setDate(privateDate.getDate() + num);  
+   range = new Date(range);
+    return range; 
+    }
+  
+
+  //methods to set range of shipping days 
+  var rangeOne = setRange(1); 
+  var rangeTwo = setRange(2); 
+  var rangeThree = setRange(3); 
+  var surePostlow = setRange(lowRangeSurePost); 
+  var rangeEight = setRange(8); 
+  
+
+  
+  if(upsOneDay === 0) {
+ var upsHigh = setRange(upsHighDay);  
+  var upsLow = setRange(upsLowDay);  
+  
+  } else  {
+ 
+ 
+var oneDay  = setRange(upsOneDay); 
+  }
+	
+
+   function ftw(date) {
+    
+        var differenceInTime = date.getTime() - today.getTime(); 
+        //converts to days 
+        differenceInDay = differenceInTime / (1000 * 3600 * 24);
+        var rounded =  Math.trunc(differenceInDay); 
+	     rounded = Math.abs(rounded); 
+        return rounded;
+
+   }
+
+	
+  var rangeOneDay = ftw(rangeOne);
+ 
+  var rangeTwoDay = ftw(rangeTwo); 
+  var rangeThreeDay = ftw(rangeThree); 
+  var surePost = ftw(rangeEight); 
+  var bottomSurePost = ftw(surePostlow); 
+	 
+  if(upsOneDay === 0)  {
+     var upsLowDayRange = ftw(upsLow); 
+  var upsHighDayRange = ftw(upsHigh); 
+  } else {
+     var upsDayOneRange = ftw(oneDay); 
+  }	
+
+	
+
+  
+       var checkWeekendArr = [];  
+       var checkWeekendArr1 = []; 
+       var checkWeekendArr2 = []; 
+       var checkWeekendArr3 = []; 
+       var checkWeekendArr8 = [];
+       var checkWeekendArrBottomRangeSurePost = []; 
+       var checkWeekendArrUpsOneDay = []; 
+       var checkWeekendArrUpsLowDay = []; 
+       var checkWeekendArrUpsHighDay = []; 
+ 
+       function checkWeekend(num1) {
+     
+         
+       //loops through days to check if weekend falls between range of shipping dates 
+       for(var a = 1; a <= num1; a++) {
+   
+         
+         var date2 = new Date();
+      
+         var dateRange = date2.setDate(date2.getDate() + a);
+         
+      //converts to days 
+         var dateRangeConvert = new Date(dateRange); 
+         var days = dateRangeConvert.getDay();    
+         Math.trunc(days); 
+       
+        
+       checkWeekendArr.push(days); 
+         
+       }
+       
+       return checkWeekendArr; 
+      }
+
+
+ var checkWeekendArr1 =  checkWeekend(rangeOneDay); 
+ var weekendTwoArray =  checkWeekend(rangeTwoDay);
+ var weekendThreeArray =  checkWeekend(rangeThreeDay); 
+ var surePostArray =  checkWeekend(surePost); 
+ var surePostLowArray = checkWeekend(bottomSurePost); 
+ 
+
+   if(upsOneDay === 0) {
+     var upsLowArray = checkWeekend(upsLowDayRange);
+     var upsHighArray = checkWeekend(upsHighDayRange); 
+  } else {
+     var upsOneDayArray = checkWeekend(upsDayOneRange); 
+  }
+
+
+
+
+//splice the arrays
+var checkWeekendArr1 = surePostArray.splice(0, 1);
+var checkWeekendArr2 = surePostArray.splice(0, 2);
+var checkWeekendArr3 = surePostArray.splice(0, 3);
+var checkWeekendArr8 = surePostArray.splice(0, 8);
+var checkWeekendArrBottomRangeSurePost = surePostArray.splice(0, lowRangeSurePost); 
+var checkWeekendUpsLowRange = surePostArray.splice(0, upsLowDay); 
+var checkWeekendUpsHighRange = surePostArray.splice(0, upsHighDay); 
+var checkWeekendUpsOneDay = surePostArray.splice(0, upsOneDay); 
+
+
+
+
+var addDate; 
+var anotherDate = new Date();
+
+//check array and add days according to whether the day matches a Friday or weekend or not 
+  
+
+ 
+	  var shippingDaysToAdd;  
+	
+function loopDays(arr) {
+	
+	  /* 
+      var lastDay = arr.pop();
+	  if(lastDay === 6) {
+		  shippingDaysToAdd = 2; 
+	  } else if (lastDay === 0) {
+		  shippingDaysToAdd = 1; 
+	  } else {
+		  shippingDaysToAdd = 0; 
+	  }
+      */ 
+	  
+	  var addWeekendDays = arr.filter(number => number < 1); 
+      var addWeekendDays1 = arr.filter(number2 => number2 > 5);
+      var weekendArrayTotal = addWeekendDays.concat(addWeekendDays1)
+      var checkSaturday = weekendArrayTotal.includes(6); 
+	  var shippingDaysToAdd = weekendArrayTotal.length;
+	
+	
+	
+	
+      return shippingDaysToAdd; 
+}
+
+
+//var test =   loopDays(checkWeekendArr1);
+var oneDayWeekendDays = loopDays(checkWeekendArr1); 
+var twoDayWeekendDays = loopDays(checkWeekendArr2); 
+var threeDayWeekendDays = loopDays(checkWeekendArr3); 
+var fourDayWeekendDay = loopDays(checkWeekendArr8);
+var fiveDayWeekendDay = loopDays(checkWeekendArrBottomRangeSurePost)
+
+
+
+   if(upsOneDay === 0) {
+    var upsLowDayWeekend = loopDays(checkWeekendUpsLowRange);
+    var upsHighDayWeekend = loopDays(checkWeekendUpsHighRange);
+
+  } else {
+    var upsOneDayWeekend = loopDays(checkWeekendUpsOneDay); 
+  }
+
+
+
+       //adds weekend days to total shipping days   
+       function addWeekendDays(weekend, shippingrange) {
+         var addDate; 
+         var anotherDate = new Date(); 
+            
+           var fullShippingTime = weekend + shippingrange;
+             //alert(fullShippingTime); 
+             //adds full amount of shippin days to current date 
+           addDate = anotherDate.setDate(anotherDate.getDate() + fullShippingTime); 
+           //converts to days     
+           var dateFinal = new Date(addDate);
+           var fridayCheck = dateFinal.getDay();  
+         
+           
+           return dateFinal;
+                     
+       } 
+       
+
+//calling add weekends function       
+     var oneDay =  addWeekendDays(oneDayWeekendDays, rangeOneDay);
+     var twoDay =  addWeekendDays(twoDayWeekendDays, rangeTwoDay);
+	 
+     var threeDay =  addWeekendDays(threeDayWeekendDays, rangeThreeDay);
+     var sureDay =  addWeekendDays(fourDayWeekendDay, surePost);
+     var sureDayBottom =  addWeekendDays(fiveDayWeekendDay, bottomSurePost);    
+     
+        if(upsOneDay === 0) {
+                     var upsLowDay = addWeekendDays(upsLowDayWeekend, upsLowDayRange);
+                     var upsHighDay = addWeekendDays(upsHighDayWeekend, upsHighDayRange);  
+        } else {
+         
+                      var upsOneDay = addWeekendDays(upsOneDayWeekend, upsDayOneRange);
+  
+        }
+	
+
+	
+	
+	var addHour; 
+	 //sets the final date to be sent to the console 
+      function setTheDate(theDate, id) {
+        /*
+		     function checkTime() {
+				 		var today = new Date(); 
+				  var twoOClock = today.getHours(); 
+				  if (twoOClock > 13) {
+					  addHour = 1; 
+				  } else {
+					  addHour = 0; 
+				  }
+				   return addHour; 
+			   }
+
+				var addDay = checkTime(); 
+
+		  */    
+		              
+           var theMonth = theDate.getMonth(); 
+           var thisYear = theDate.getFullYear(); 
+           var theDay = theDate.getDate();
+		   var day = theDate.getDay(); 
+       
+           var theDay = theDate.getDate();
+           //adds days if falls on weekend 
+           
+		  
+		/*  if(day == 6) {
+               day += 2; 
+			   theDay += 3; 
+            
+           } else if (day == 0) {
+               theDay += 2; 
+               day +=1; 
+           } */ 
+		   
+		  
+		  /* 
+		   var updatedDateToCheckDay = new Date(thisYear, theMonth, theDay); 
+		   var dayUpdate = updatedDateToCheckDay.getDay(); 
+		  */
+		  
+		   let monthNames = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Oct", "Nov", "Dec"]; 
+		   
+		   theMonth = monthNames[theMonth];
+		  
+		   var daysWeek = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+	       var dayOfWeek = daysWeek[day]; 
+		
+	
+		  
+		   // theDay = theDay + addDay; 
+	/*	  if(theDay === 25) {
+			  theDay = theDay + 1; 
+			  whichDayOfWeek + 2; 
+		  } 
+		  
+		  if(theDay === 24) {
+			  theDay = theDay + 2; 
+			   whichDayOfWeek + 3; 
+		  } */ 
+		  
+
+           
+		  
+		  var dayOfWeek = daysWeek[day]; 
+           
+           var fullDate = /*"<strong>" + dayOfWeek + "</strong>" + ":  " +*/ theMonth + " " + theDay;  
+		  
+		  
+           document.getElementById(id).innerHTML = fullDate;
+	 
+      }
+        
+      
+	 
+	
+	
+        
+      
+     
+      
+
+//calling set the day function
+
+
+
+	
+	
+setTheDate(oneDay, "UPS-Next-Day-Saver"); 
+setTheDate(oneDay, "UPS-Next-Day"); 
+setTheDate(twoDay, "Two-Day-Air"); 
+setTheDate(threeDay, "Three-Day-Select"); 
+setTheDate(sureDay, "surepost"); 
+setTheDate(sureDayBottom, "surepostBottom"); 
+
+
+
+
+
+   if(upsOneDay == 0) {
+    setTheDate(upsLowDay, "UPS-Low"); 
+    setTheDate(upsHighDay, "UPS-High");
+  } else {
+     setTheDate(upsOneDay, "UPS-Ground-One"); 
+  }
+
+
+
+
+
+
+
+
+
+
+
+</script>
+								
+								
+								
+								
+								
+                            <!--END: ShipQuoteInternational-->
+                            <!--START: promo_section-->
+                            <div class="coupons-area cart-detail-item">
+                                <!--START: apply_coupon-->
+                                <h4 class="module-expand" data-target="#apply-coupon">[viewcart_coupon-header]</h4>
+                                <div id="apply-coupon" class="module-content">
+                                    <div class="coupon-msg">[viewcart_coupon-message]</div>
+                                    <div class="apply-cupon clearfix">
+                                        <input id="coupon_code" type="text" name="coupon_code" class="form-control" data-parsley-maxlength="20" data-parsley-errors-messages-disabled>
+
+										<!--START: gc_pin-->
+										<input id="gc_pin" type="text" onchange="clearContent(this);" placeholder="[giftcertificate_pin]" maxlength="10" size="5" value="" name="gc_pin" class="form-control" />
+										<!--END: gc_pin-->
+
+                                        <button type="submit" class="btn btn-default">Apply</button>
+                                    </div>
+                                </div>
+                                <!--END: apply_coupon-->
+                                <!--START: PROMOTIONS-->
+                                <div class="displayPromotions">
+                                    <!--START: DISPLAY_PROMOS-->
+                                    <div class="infopromotion">
+                                        <div class="promotion-head">
+                                            <div class="promotion_name">[promotion_name]</div>
+                                            <!--START: REMOVE_PROMO-->
+                                            <a href="#" class="remove-promo" data-promoId="[id]"><i class="icon-cancel"></i> Remove</a>
+                                            <!--END: REMOVE_PROMO-->
+                                        </div>
+                                        <p>[promotion_description]</p>
+                                        <p>Valid from: [promotion_start] - [promotion_end]</p>
+                                    </div>
+                                    <!--END: DISPLAY_PROMOS--> 
+                                </div>
+                                <!--END: PROMOTIONS--> 
+                            </div>
+                            <!--END: promo_section-->
+    
+                         <!--START: transit map --> 
+							   <div class="container transit-time-map-div">
+  <h3>UPS Ground Transit Time</h2>
+ 
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><img id="upsMap" src="https://www.e-rigging.com/assets/images/E-Rigging-UPS-Transit-Time-Map.jpg"></button>
+<style> 
+	#upsMap {
+	max-width: 250px !important;width: 50%; float: right;
+		
+	}
+</style> 
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+     
+      <div style="margin-top: 15%;" class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="text-align: center;">UPS Ground Transit Time</h4>
+        </div>
+        <div style="text-align: center;" class="modal-body">
+          <p><img src="assets/images/E-Rigging-UPS-Transit-Time-Map.png" alt="E-Rigging UPS Transit Time Map"  width="546" height="379" alt=""/></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+						 <!--END: transit map --> 
+    
+                            
+                        </div>
+    
+                      <a id="continue-shopping-btn" href="[continue_url]">  <div class="continue-shopping">
+                            <i class="icon-left"></i> [viewcart_continue-shopping]
+                        </div></a>
+                    </div>
+                </div>
+            </div>
+        </form>
+	</section>
+
+
+	<!--START: CATEGORY_FOOTER-->
+	<section class="category-footer" id="viewCartFooter">
+		<div class="container">[CONTENT]</div>
+	</section>
+	<!--END: CATEGORY_FOOTER-->
+
+		<!-- start stock script--> 			
+    			<script type="text/javascript"> 
+	   
+
+	   
+		var stock1 = document.getElementsByClassName("stock"); 
+	    var cartItems = document.getElementsByClassName("cart-item"); 
+					
+						for(var j = 0; j < cartItems.length; j++) {
+							
+								 var stock = document.getElementsByClassName("stock")[j];
+							     console.log(stock); 
+							     var stockinBasket = document.querySelectorAll(".quant-input")[j].children[0];
+		     				     var inputStock = stockinBasket.getAttribute("value");
+							     var currentStock = stock.id; 
+							     console.log(inputStock);
+							     console.log(currentStock); 
+                                 
+			
+							     var actualStock = currentStock - inputStock;
+							     console.log(actualStock); 
+							     
+								if (actualStock >= 0 ) {
+				 				stock.after("In Stock");
+	
+						} else {
+							if (currentStock >= 0) {
+			 			    	stock.after("Out of Stock: " + currentStock + " available");
+							   } else {
+								 stock.after("Out of Stock");
+							   }
+							}
+                            		                
+					}
+	
+	
+	</script>
+	
+	
+
+
+
+</section>
+
+<!--START: kount-->
+<iframe width="1" height="1" frameborder="0" scrolling="no" src="/logo_k.htm?m=[kount_merchantid]&s=[kount_sessionid]"> <img width="1" height="1" src="/logo_k.gif?m=[kount_merchantid]&s=[kount_sessionid]" alt="" /> </iframe>
+<!--END: kount-->
+
+<!--START: GIFTWRAP_OPTIONS-->
+<div id="divGiftWrap" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<form method="post" name="frmGiftWrap" id="frmGiftWrap">
+			
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">[giftwrap_title]</h4>
+				</div>
+
+
+				<div class="modal-body">
+					<div class="gift-wrap-inner">
+
+						<div id="divGiftwrapItem" class="divGiftwrapItem"> 
+							<!--START: giftwrapitem-->
+
+                            <!--START: giftwrapitem_img-->
+                            <div class="gw-image"><img src="thumbnail.asp?file=[giftwrap_thumbnail]" height="55" width="55" /></div>
+                            <!--END: giftwrapitem_img-->
+
+							<div class="gw-id hide">[giftwrap_catalogid]</div>
+							<div class="gw-name">[giftwrap_name]</div>
+							<div class="clear"></div>
+							<div class="gw-desc">[giftwrap_description]</div>
+							<div class="clear"></div>
+							<!--END: giftwrapitem--> 
+						</div>
+
+						<div class="form-group row">
+							<label for="giftwrap_id" class="col-xs-12 control-label">[giftwrap_select-text]:</label>
+							<div class="col-xs-12">
+								<select id="giftwrap_id" name="giftwrap_id"  class="form-control" onchange="updateGiftWrapOption()">
+									<option value="">-- [giftwrap_select-text] --</option>
+									[giftwrap_options]
+								</select>
+							</div>
+						</div>
+
+						<div id="divGiftwrapMsg" class="form-group row">
+							<label for="giftwrap_message" class="col-xs-12 control-label">[giftwrap_message-text]:</label>
+							<div class="col-xs-12">
+								<textarea name="giftwrap_message" id="giftwrap_message" onkeyup="countChar(this)" rows="6" cols="45" class="form-control">[giftwrap_message]</textarea>
+								<div class="chars-left"><span id="spnChars"><!--START: giftwrapcount-->400<!--END: giftwrapcount--></span>&nbsp;[giftwrap_charsleft]</div>
+							</div>
+						</div>
+
+						
+					</div>       
+				</div>
+
+				<div class="modal-footer text-right">
+					<button type="button" id="cmdGWCancel" class="btn btn-default" data-dismiss="modal">[giftwrap_cancel]</button>
+					<button type="button" name="cmdGWAdd" id="cmdGWAdd" class="btn btn-primary">[giftwrap_add]</button>
+				</div>
+
+			</form>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div>
+<input type="hidden" id="giftwrap_pleaseselect" value="[giftwrap_pleaseselect]" />
+<!--END: GIFTWRAP_OPTIONS--> 
+
+<form id="gc_form" method="post" action="recalculate.asp?apply_coupon=2">
+    <input id="gc_coupon_id" type="hidden" name="coupon" value="" />
+</form>
+
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/lib/utilities.js"></script>
+
+<!--START: ShipQuoteInternationalScript-->
+<script type="text/javascript" src="state_countryjs.asp"></script> 
+<script type="text/javascript">
+
+	function get_Element(i) {
+		return document.getElementById(i) || document.getElementsByName(i).item(0);
+	}
+	function getInternationalQuote() {
+		var strAction = "shipquote.asp?shipping_country=" + get_Element("shipping_country").value;
+		strAction = strAction + "&shipping_state=" + get_Element("shipping_state").value;
+		document.shipquote.action = strAction;
+
+		document.shipquote.shipping_zip.value = document.recalculate.shipping_zip.value
+		document.shipquote.submit();
+	}
+	initCountry("[shipping_country]", "[shipping_state]", "shipping_state", "shipping_country", "[CustomerInfo_state]");
+
+	jQuery(function () {
+		jQuery('#shipping_country').change(function () {
+			jQuery('#calculate_shipping_zip').val('');
+			populateState('shipping_state', 'shipping_country', '', undefined, '');
+			jQuery('#shipping_state').change(function () {
+				jQuery('#calculate_shipping_zip').val('');
+			});
+		});
+		jQuery('#shipping_state').change(function () {
+			jQuery('#calculate_shipping_zip').val('');
+		});
+		jQuery('#calculate_button_go').click(function () {
+			getInternationalQuote();
+		});
+	});
+</script> 
+<!--END: ShipQuoteInternationalScript--> 
+
+<!--START: paypalexpress_braintree_script-->
+<script src="https://js.braintreegateway.com/js/braintree-2.32.1.min.js"></script>
+<script type="text/javascript">
+	var ppb_clientToken = jQuery('#ppb_clientToken').val();
+	var ppb_global_order_subtotal = jQuery('#ppb_global_order_subtotal').val();
+	var ppb_currency_code = jQuery('#ppb_currency_code').val();
+    var ppb_single_use = (jQuery('#ppb_single_use').val()=="1"?false:true);
+	braintree.setup(
+		ppb_clientToken,
+		"paypal", {
+			container: "divpaypalexpress_braintree",
+			singleUse: ppb_single_use,
+			enableShippingAddress: true,
+			enableBillingAddress: true,
+			amount: ppb_global_order_subtotal,
+			currency: ppb_currency_code,
+			onPaymentMethodReceived: handlePayPalResponse
+		}
+	);
+	function handlePayPalResponse(objPaypal) {
+		console.log(objPaypal.nonce);
+		console.log(objPaypal);
+
+		jQuery.ajax({
+			url: 'checkout_one.asp?action=ProcessPaypalbraintreeExpress',
+			data: "objPaypal=" + encodeURIComponent(JSON.stringify(objPaypal)),
+			dataType: 'text',
+			type: 'post',
+			cache: false,
+			success: function (strResult) {
+				if (strResult == "1")
+					location.href = "checkout.asp";
+				else
+					alert("Error processing PayPal information. Please, try again.");
+			},
+			error: function (objResult) {
+				alert("Error processing PayPal information. Please, try again.");
+				console.log(objResult);
+			}
+		});
+	}
+</script>
+<!--END: paypalexpress_braintree_script-->
+
+<!--START: PayWithAmazon_script-->
+<script type='text/javascript'>
+	window.onAmazonLoginReady = function () {
+	amazon.Login.setClientId('[amazonpay_clientid]');
+};
+</script>
+<script type='text/javascript' src='https://static-na.payments-amazon.com/OffAmazonPayments/us/[amazonpay_sandbox]js/Widgets.js'></script>
+
+<!-- Place this where you would like the Payment Button to appear -->
+							
+<script type="text/javascript">
+	var authRequest;
+	var amazonOrderReferenceId;
+	OffAmazonPayments.Button("AmazonPayButton", "[amazonpay_sellerid]", { 
+		type: "PwA",
+		color: "Gold",
+		size: "small",
+		authorization: function () {
+			var loginOptions = { scope: 'profile payments:widget payments:shipping_address', popup: true };
+			authRequest = amazon.Login.authorize(loginOptions, "[amazonpay_domain]/checkout_one.asp?wid=3");
+		},
+		onError: function (error) {
+			alert(error.getErrorMessage());
+			console.log(error);
+		}
+	});
+</script>
+<!--END: PayWithAmazon_script-->
+
+
+
+<script type="text/javascript" src="/assets/templates/common-core/lib/waypoints/jquery.waypoints.min.js"></script>
+<!--START: giftwrap_script-->
+<script type="text/javascript" src="/assets/templates/common-core/js/addons/giftwrap.js"></script>
+<!--END: giftwrap_script-->
+
+
+<script type="text/javascript">
+    //You should create the validator only after the definition of the HTML form
+    var frmvalidator = new Validator("recalculate");
+
+    frmvalidator.setAddnlValidationFunction("submitForm");
+
+    //<!--START: apply_coupon_validation-->
+    frmvalidator.addValidation("coupon_code", "maxlen=20", "Maximun Coupon Length is 20");
+    //<!--END: apply_coupon_validation-->
+</script> 
+
+<!--START: stripe_applepay_button_js-->
+[stripeApplePay_js]
+<!--END: stripe_applepay_button_js-->
+
+<script type="text/javascript" src="/assets/templates/common-core/lib/flexslider/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="/assets/templates/common-core/js/view_cart.js"></script>
+
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/lib/flexslider/flexslider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/view_cart.css" type="text/css" media="screen" />
+<!--END: template_styles-->
+
+	<script defer type="text/javascript"> 
+			
+			 var cartItems = document.getElementsByClassName("cart-item"); 
+		
+	for (var i = 0; i < cartItems.length; i++) {
+	var checkStock = document.getElementsByClassName("cart-items")[i].innerHTML;
+			var check = checkStock.includes("Out of Stock"); 
+			if (check === true) {
+					document.getElementById("same-day-div").style.display = "none"; 
+					document.getElementById("same-day-mobile").style.display = "none"; 
+					document.getElementById("same-day-div-2").style.display = "none"; 
+			    	document.getElementById("separate-orders-div").style.display = "block"; 
+					document.getElementById("separate-orders-mobile").style.display = "block";
+					document.getElementById("separate-orders-div-2").style.display = "block"; 
+				
+			} else {
+				    document.getElementById("same-day-div").style.display = "block";
+				    document.getElementById("same-day-mobile").style.display = "block";
+					document.getElementById("same-day-div-2").style.display = "block"; 
+					document.getElementById("separate-orders-div").style.display = "none"; 
+					document.getElementById("separate-orders-mobile").style.display = "none"; 
+				    document.getElementById("separate-orders-div-2").style.display = "none";
+			}
+			}
+	
+	</script>	
+
+
+<script>
+
+  const shippingComparePrice = []; 
+  var shippingLabel = document.getElementsByClassName("shipping-label");
+	//loop through all labels, remove dollar sign then add to array 
+	for (var x = 0; x < shippingLabel.length; x++) {
+		var shipPrice = document.getElementsByClassName("shipping-choice")[x];
+		var price = shipPrice.getAttribute("value"); 
+		var price2 = price.replace("$", ""); 
+	    shippingComparePrice.push(price2); 
+		
+	}
+	
+	
+	//find lowest value in array 
+	var lowestPrice = Math.min(...shippingComparePrice); 
+	var lowestPricedec = lowestPrice.toFixed(2); 
+	var lowestPricedollah = "$" + lowestPricedec;
+	
+	
+	//loop through all labels again to search for the lowest value then style it 
+	for(var j = 0; j < shippingLabel.length; j++) {
+			var shipPriceSpan = document.getElementsByClassName("shipPrice")[j].innerHTML;
+		    var shipPriceSpanStyle = document.getElementsByClassName("shipPrice")[j]; 
+			var newLow = lowestPricedollah.toString().trim();
+			console.log(newLow); 
+			var newCurrent = shipPriceSpan.toString().trim(); 
+			console.log(newCurrent); 
+				if (newCurrent == lowestPricedollah) { 
+					var priceSpan = document.getElementsByClassName("shipPrice")[j];
+					var labelDiv = document.getElementsByClassName("shipping-label")[j];
+					labelDiv.setAttribute(
+						"style", 
+					"background: white; padding: 10px 10px 0px; border: 2px solid #0C172B; border-radius: 4px; width: fit-content;"); 
+					
+					var pbestPrice = document.createElement("p"); 
+					var priceSpan2 = document.createTextNode("Best Shipping Rate"); 
+					pbestPrice.appendChild(priceSpan2); 
+					priceSpan.appendChild(pbestPrice); 
+					pbestPrice.setAttribute(
+					"style", 
+					"width: fit-content; padding: 5px; background: #168116; color: azure;margin-top: 5px;");  
+					break;
+					}	 
+	}
+			
+	
+	
+</script>
+
+<!--
+<script>
+console.log('hey');
+</script>
+
+<script>
+	
+	window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: 'transaction',
+  ecommerce: {
+    purchase: {
+      actionField: {
+        id: 1,
+      },
+      products: [{
+        id: '1'
+      }]
+    }
+  }
+});
+	
+</script>
+-->
+	<style>
+									.modal-open .modal {
+										background: #00000038; 
+									}
+									
+									.close {
+										
+										font-size: 40px !important; 
+										color: #2b2b2b !important; 
+										opacity: 1; 
+									}
+									
+									.modal-title {
+										line-height: 2.5; 
+									}
+								
+		
+	
+								</style>
+<div style="margin-bottom: 50px"></div>
+
+
+	

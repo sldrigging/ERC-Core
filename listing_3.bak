@@ -1,0 +1,853 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/templates/[template]/js/OrderShipBy.js"></script>
+<!--START: CATEGORY_FULLINE-->
+
+<section class="breadcrumnb">
+  <div class="container">
+    <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+    <a href="/one-half-inch-ACCO-Grade-43-chain" style="color: black;">  1/2" ACCO ISO Grade 43, Galvanized High Test Chain, Made In USA (Sold Per Foot) ></a> 
+    </ol>
+  </div>
+</section>
+<!--END: CATEGORY_FULLINE--> 
+
+<!--START: CATEGORY_HEADER-->
+<section class="category-header">
+  <div class="container">[CONTENT]</div>
+</section>
+<!--END: CATEGORY_HEADER-->
+
+<section id="listing-cut-chain" class="listing-page-content page-content" itemscope itemtype="http://schema.org/Product">
+  <div class="container">
+    <form enctype="multipart/form-data" method="post" action="add_cart.asp" name="add" id="add">
+      <input type="hidden" name="item_id" id="catalogid" value="[catalogid]" />
+      <input type="hidden" name="itemid" id="itemid" value="[id]" />
+      <input type="hidden" name="category_id" value="[catid]" />
+      <input type="hidden" name="customPoints" id="customPoints" value="[customPoints]" />
+      <input type="hidden" name="pointsMultiplier" id="pointsMultiplier" value="[pointsMultiplier]" />
+      <input type="hidden" name="productRewardDesc" id="productRewardDesc" value="[productRewardDesc]" />
+      <input type="hidden" id="product_url" value="[product_url]" />
+      <input type="hidden" id="allowbackorder" value="[allowbackorder]" />
+      <input type="hidden" id="allowadvancedoption_waitlist" value="[allowadvancedoption_waitlist]" />
+      <input type="hidden" id="has_rules" value="[has_rules]" />
+      <input type="hidden" id="currency" value="[currency]" />
+      <input type="hidden" id="prod_decimal_places" value="[prod_decimal_places]" />
+      <input type="hidden" name="itemid_advancedoption" id="itemid_advancedoption" value="" />
+      <input type="hidden" id="availability_itemprop" value="[availability_itemprop]" />
+      <input type="hidden" id="productAvailability-Instock" value="[productAvailability-Instock]" />
+      <input type="hidden" id="productAvailability-Outofstock" value="[productAvailability-Outofstock]" />
+      <input type="hidden" id="productAvailability-Backorder" value="[productAvailability-Backorder]" />
+      <div class="prev-next clearfix"> 
+        <!--START: PREV_PROD-->
+        <div class="prev-prod pull-left"> <a href="[prevprodlink]" class="clearfix"> <img src="thumbnail.asp?file=[prevprodthumb]&maxx=30&maxy=30" width="30" height="30" alt="" class="pull-right" /> <span class="pull-left">Prev</span> </a> </div>
+        <!--END: PREV_PROD--> 
+        <!--START: NEXT_PROD-->
+        <div class="next-prod pull-right"> <a href="[nextprodlink]"  class="clearfix"> <img src="thumbnail.asp?file=[nextprodthumb]&maxx=30&maxy=30" width="30" height="30" alt="" class="pull-left" /> <span class="pull-right">Next</span> </a> </div>
+        <!--END: NEXT_PROD--> 
+      </div>
+      <div class="product-cols row">
+	    
+		  <div class="col-lg-12">
+		   <!--START: image1-->
+          <div id="main-image" class="main-image text-center"> <a href="[image1]" class="[3dzoom_class]" id="listing_main_image_link" title="[imagecaption1]" data-options="[zoom_options]"> <img itemprop="image" src="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0" id="large" alt="[name]" class="img-responsive" /> </a>
+            <div name="imagecaptiont" title="[imagecaption1]" id="imagecaptiont" class="imagecaptiont">[imagecaption1]</div>
+          </div>
+          <!--END: image1--> 
+		
+		  
+    
+          <div class="product-details"> 
+            <!--START: dailydeal-->
+            <div class="clearfix product-dd">
+              <div class="col-sm-4 product-dd-left">
+                <div class="product-dd-left-inner"> Deal of the Day <br class="visible-lg visible-sm" />
+                  ([savings_percentage]% Off) </div>
+              </div>
+              <div class="col-sm-8 product-dd-right">
+                <div class="product-dd-right-inner">
+                  <div class="widgetCountdown">
+                    <div class="countdown-text">Hurry! deal ends in:</div>
+                    <div class="dd-timer" id="dd-timer"> 
+                      <script type="text/javascript">
+												TargetDate_dd = "[dd_expires]";
+												targetsecs = "[dd_secs]";
+												BackColor = "transparent";
+												ForeColor = "#FFFFFF";
+												CountActive = true;
+												CountStepper = -1;
+												LeadingZero = true;
+												DisplayFormat = "%%D%% Days %%H%% Hours %%M%% Mints %%S%% Secs" ;
+												FinishMessage = "The deal is over!";
+                                            </script> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--END: dailydeal--> 
+            <!--START: groupdeal-->
+            <div class="product-gd">
+              <div class="product-gd-timer">
+                <div class="widgetCountdown">
+                  <div class="countdown-text">Hurry! deal ends in:</div>
+                  <div class="gd-timer countdown-timer" id="gd-timer" data-expires="[gd_expires]" data-secs="[gd_secs]">
+                    <div class="countdown-timer-inner"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="gdInfo clearfix product-gd-details">
+                <div id="gdItemsSold" class="col-xs-8 row"> 
+                  <!--START: gdItemsSold-->
+                  <div class="col-xs-6 gd-details-item"> [gd_itemssold] <span>SOLD</span> </div>
+                  <div id="gdItemsToSell" class="col-xs-6 gd-details-item"> [gd_itemstosell] <span>TO GO</span> </div>
+                  <!--END: gdItemsSold--> 
+                </div>
+                
+                <!--START: savings_percentage-->
+                <div class="col-xs-4 gd-details-item"> [savings_percentage]% <span>SAVINGS</span> </div>
+                <!--END: savings_percentage--> 
+              </div>
+            </div>
+            <!--END: groupdeal-->
+            <img id="manufacturer-logo" src="[manufacturer_logo]" />
+            <h1 itemprop="name" class="page_headers">[name]</h1>
+                        <!--START: id-->
+            <div class="product-id"><strong>[product_id]:</strong> <span id="product_id">[id]</span></div>
+            <!--END: id-->
+            <!--START: pricing-->
+            <div class="pricingBlock" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+              <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition" />
+              <meta itemprop="availability" href="http://schema.org/[availability_snippet]" />
+              <meta itemprop="priceCurrency" content="[priceCurrency]" />
+              
+              <!--START: ITEMPRICE-->
+              <div class="yourprice price"> [product_yourprice] <span id="price">[price]</span>
+                <meta itemprop="price" content="[price_without_currency]" />
+              </div>
+              <!--END: ITEMPRICE--> 
+              <!--START: SALEPRICE-->
+              <div class="saleprice price"> [product_onsale] <del class="original-price">[price]</del> <span id="price" class="sale-price">[saleprice]</span>
+                <meta itemprop="price" content="[saleprice_without_currency]" />
+              </div>
+              <!--END: SALEPRICE--> 
+              <!--START: price2-->
+              <div class="retailprice">[product_retailprice]<span>[price2]</span></div>
+              <!--START: SAVINGS-->
+              <div class="savings">[product_savings]<span>[savings]</span><span>([savings_percentage]%)</span></div>
+              <!--END: SAVINGS--> 
+              <!--END: price2--> 
+            </div>
+            <!--END: pricing--> 
+            <!--START: description-->
+            <div class="short-description more" itemprop="description">[description]</div>
+            <!--END: description--> 
+			  
+			  <div id="tab-1">
+          <div class="item" itemprop="description">[extended_description]</div>
+        </div>
+	  <!--START: PRODUCT_OPTIONS_BLOCK-->
+            <div id="divOptionsBlock" class="options sub-section"> 
+              <!--START: divOptionsBlock-->
+              <div class="header">
+                <h4 class="page_heading ">[product_optionheader]</h4>
+              </div>
+              <div class="options-inner"> 
+                
+                <!--START: options--> 
+                <!--START: opt-title-->
+                <div class="opt-title">
+                  <label class="label">[OPTIONLABEL]</label>
+                </div>
+                <!--END: opt-title--> 
+                <!--START: opt-regular-->
+                <div class="opt-regular">
+                  <div class="opt-label">
+                    <label class="label">[OPTIONLABEL]</label>
+                    <!--START: required--> 
+                    <span class="required">*</span> 
+                    <!--END: required--> 
+                    <!--START: help-->
+                    <button type="button" class="btn-link option-help" data-toggle="[help_control_type]" data-content="[opthelp][opturl]" data-placement="top"  data-trigger="hover"> <span class="icon-help-circled"></span> </button>
+                    <!--END: help--> 
+                  </div>
+                  <div class="opt-field">[OPTIONFIELD]</div>
+                </div>
+                <!--END: opt-regular--> 
+                <!--END: options--> 
+                
+                <!--START: optionstemplate--> 
+                <!--START: textarea-format-->
+                <div class="form-group">
+                  <label for="textarea[oname]">[value]: [oprice]</label>
+                  <textarea rows="3" name="textarea[oname]" id="textarea[oname]" maxlength="[option_textlimit]" [option_textarealimit_validation] class="form-control customoption"></textarea>
+                </div>
+                <!--START: textlimit_display_validation[oname]-->
+                <div class="textlimit-textarea"><span id="charcount[oname]">[option_textlimit]</span> [product_charsleft]</div>
+                <!--END: textlimit_display_validation[oname]--> 
+                <!--END: textarea-format--> 
+                <!--START: text-format-->
+                <div class="form-group">
+                  <label for="text[oname]">[value]: [oprice]</label>
+                  <input type="text" name="text[oname]" id="text[oname]" maxlength="[option_textlimit]" [option_textlimit_validation] class="form-control" />
+                </div>
+                <!--START: textlimit_display_validation[oname]-->
+                <div class="textlimit-text"><span id="charcount[oname]">[option_textlimit]</span> [product_charsleft]</div>
+                <!--END: textlimit_display_validation[oname]--> 
+                <!--END: text-format--> 
+                <!--START: qty-format-->
+                <label class="qty-format">
+                  <input type="text" size="3" name="text[oname]" value="0" class="form-control customoption" />
+                </label>
+                <label for="text[oname]" class="qty-format-label">[value] [oprice]</label>
+                <!--END: qty-format--> 
+                <!--START: file-format-->
+                <div class="file-format form-group">
+                  <label for="file[oname]">[value]: [oprice]</label>
+                  <label class="form-control">
+                    <input type="file" id="file[oname]" name="file[oname]" class="customoption" />
+                  </label>
+                </div>
+                <!--END: file-format--> 
+                <!--START: title-format-->
+                <div class="title-format">[feature]</div>
+                <!--END: title-format--> 
+                <!--START: checkbox-format-->
+                <label class="checkbox-format">
+
+                  <input type="checkbox" name="cb[oname]" value="[value]" onclick="validateValues(document.add,1);" data-optionset="[optionsetid]" class="customoption" [selected] />
+                  [feature] [oprice] </label>
+                <!--END: checkbox-format--> 
+                <!--START: radio-format-->
+                <label class="radio-format">
+                <input type="radio" name="[oname]" id="radio-[value]" value="[value]" [selected] class="customoption" />
+                
+					
+				
+		
+				
+					
+					
+                <label class="radio-option" data-group="[oname]" title="[feature]" id="[value]" onclick="getSize[value]();"> 
+                  <!--START: radio_imagepath--> 
+                  <img name="img_[oname]" src="[radio_imagepath]" /> 
+                  <!--END: radio_imagepath--> 
+                  <span>[feature] [oprice]</span> </label>
+                </label>
+                <!--END: radio-format-->  
+                <!--START: dropdown-format-->
+                <div class="dropdown-format">
+                  <label>
+                    <select name="[oname]" onchange="validateValues(document.add,1);selectOption(this);" class="form-control">
+                      <!--START: option-->
+                      <option value="[value]" [selected]>[feature] [oprice]</option>
+                      <!--END: option-->
+                    </select>
+                  </label>
+                </div>
+                <!--END: dropdown-format--> 
+                <!--START: dropdownimage-format-->
+                <div class="dropdownimage-format clearfix">
+                  <label class="pull-left dropdown-dd">
+                    <select name="[oname]" onchange="validateValues(document.add,1);selectOption(this);" class="form-control customoption">
+                      <!--START: option-->
+                      <option value="[value]" [selected]>[feature] [oprice]</option>
+                      <!--END: option-->
+                    </select>
+                  </label>
+                  <div class="dropdown-image pull-left"><img name="img_[oname]" width="50" src="assets/templates/common-core/images/spacer.gif" /></div>
+                </div>
+                <!--END: dropdownimage-format--> 
+                <!--END: optionstemplate--> 
+                
+              </div>
+              <!--END: divOptionsBlock--> 
+            </div>
+            <!--END: PRODUCT_OPTIONS_BLOCK-->		  
+
+			  
+		
+
+
+
+           
+            
+            
+            
+            <!--START: BreadCheckoutListing--> 
+            <script>
+                            //////////////////////////////////////////////////////////////////////////////////////////////////
+                            //Customize the Bread Checkout Experience
+                            //////////////////////////////////////////////////////////////////////////////////////////////////
+                            // Reference
+                            // https://docs.getbread.com/docs/integration/shopify/customize-experience/#style-the-bread-button
+                            // https://docs.getbread.com/docs/manual-integration/button-styling/#button-structure
+                            //
+                            // leave this variable blank in order to use default Bread Checkout Styles
+                               var BreadCheckoutCustomStyleCSS = ''; 
+                            //
+                            // or to use a custom CSS - All CSS values contained in quotes should use double quotes - example:
+                            // var BreadCheckoutCustomStyleCSS = '@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);#bread-button,body,html{height:100%;margin:0;width:100%}body{display:table}#bread-button{background:#EEE;color:#181818;display:table-cell;font-family:"Open Sans",sans-serif;font-size:16px;text-align:center;vertical-align:middle}.bread-text{cursor:pointer;text-decoration:underline;transition:all .2s ease}.bread-text:hover{color:#197797}.bread-dur{text-transform:lowercase;word-spacing:-3px;margin-left:-3px}.bread-embed-inner,.bread-label .bread-embed-icon{display:inline-block}.bread-btn .bread-as-low-as:before,.bread-label .bread-as-low-as:before{content:"As low as "}.bread-btn .bread-for:before{content:"For "}';
+                            ///////////////////////////////////////////////////////////////////////////////////////////////////
+                        </script>
+            <div id="bread-label" data-bread-default-size="true"></div>
+            [BREADCHECKOUT_SCRIPTS_BLOCK] 
+            <!--END: BreadCheckoutListing--> 
+            
+            <!--START: affirm_button-->
+            <div id="affirmButton" class="affirm-as-low-as" data-promo-id="[affirmPromoId]" data-amount="[intTotal]"></div>
+            <script>
+                              _affirm_config = {
+                                public_api_key:  "[affirmPublicKey]",
+                                script:          "[affirmJsUrl]"
+                              };
+                              (function (l, g, m, e, a, f, b) { var d, c = l[m] || {}, h = document.createElement(f), n = document.getElementsByTagName(f)[0], k = function (a, b, c) { return function () { a[b]._.push([c, arguments]) } }; c[e] = k(c, e, "set"); d = c[e]; c[a] = {}; c[a]._ = []; d._ = []; c[a][b] = k(c, a, b); a = 0; for (b = "set add save post open empty reset on off trigger ready setProduct".split(" "); a < b.length; a++)d[b[a]] = k(c, e, b[a]); a = 0; for (b = ["get", "token", "url", "items"]; a < b.length; a++)d[b[a]] = function () { }; h.async = !0; h.src = g[f]; n.parentNode.insertBefore(h, n); delete g[f]; d(g); l[m] = c })(window, _affirm_config, "affirm", "checkout", "ui", "script", "ready");
+                              affirm.ui.ready(function () {
+                                  var spanPriceElem = document.getElementById('price');
+                                  if (jQuery != null && spanPriceElem != undefined && spanPriceElem != null) {
+                                      jQuery('#price').on('DOMSubtreeModified', function () {
+                                          var arrPrice = spanPriceElem.innerText.match(/\d+/);
+                                          if (arrPrice != null) {
+                                              document.getElementById('affirmButton').setAttribute('data-amount', arrPrice[0] + "00");
+                                              if (affirm.ui != null)
+                                                  affirm.ui.refresh();
+                                          }
+                                      })
+                                  }
+                              });
+                        </script>
+            <div class="clear"></div>
+            <!--END: affirm_button--> 
+            <!--START: klarna_button-->
+            <div id="klarna_button"> 
+              <!--START: klarna_button_script--> 
+              <!--Klarna widget dynamically inserted--> 
+              <!--END: klarna_button_script--> 
+            </div>
+            <!--END: klarna_button--> 
+            <!--START: frame_likebutton-->
+            <div class="likebutton">[frame_likebutton]</div>
+            <!--END: frame_likebutton--> 
+          </div>
+			
+        </div>
+		   
+                <!--START: addcartbutton-->
+				  <div class="addtocart-div text-center">
+					 <input type="hidden" name="returnurl" value="/cut">
+								<button type="button" id="Add" class="btn btn-default btn-block" onclick="check_and_add(document.add);"><i class="fa fa-cart-plus"></i> [product_addtocart]</button>
+				  </div> 
+                <!--END: addcartbutton--> 
+                
+     
+            
+				
+			 <!--START: extra_field_9-->
+          <li><a href="#tab-9">[product_extrafield9]</a></li>
+          <!--END: extra_field_9--> 	
+
+			  
+
+  </div>
+
+
+    
+        <ul>
+       
+          
+          <!--START: product_features_tab-->
+          <li><a href="#tab-2">Product Features</a></li>
+          <!--END: product_features_tab--> 
+          
+          <!--START: reviews_tab-->
+          <li id="reviewsTab"><a href="#tab-4">[reviews_header]</a></li>
+          <!--END: reviews_tab--> 
+          <!--START: qa-->
+          <li><a href="#tab-5">[productqa_header]</a></li>
+          <!--END: qa--> 
+         
+          <!--START: extra_field_7-->
+          <li><a href="#tab-7">[product_extrafield7]</a></li>
+          <!--END: extra_field_7--> 
+          <!--START: extra_field_8-->
+          <li><a href="#tab-8">[product_extrafield8]</a></li>
+          <!--END: extra_field_8--> 
+         
+         
+         
+         
+        </ul>
+        
+        
+        <!--START: PRODUCT_FEATURES_BLOCK-->
+        <div id="tab-2" style="display: none;">
+          <div class="info productFeaturesBlock">
+            <ul>
+              <!--START: PRODUCT_FEATURES-->
+              <li> 
+                <!--START: product_feature_title--><strong class="feat-title">[product_feature_title]:</strong> 
+                <!--END: product_feature_title--><span class="feat-name">[product_feature_name]</span> </li>
+              <!--END: PRODUCT_FEATURES-->
+            </ul>
+          </div>
+        </div>
+        <!--END: PRODUCT_FEATURES_BLOCK--> 
+        
+        <!--START: reviews-->
+        <div id="tab-4" style="display: none;"> 
+          
+          <!--START: reviews_sorting-->
+          <div class="pull-right form-group">
+            <label>[reviews_sorting]</label>
+            <label>
+              <select name="review_sorting" onchange="javascript:ReviewSortingChange();" class="form-control" customoption="customoption">
+                
+                
+								[dropdown_reviews_sorting]
+							
+              
+              </select>
+            </label>
+          </div>
+          <!--END: reviews_sorting-->
+          
+          <div class="clearfix"></div>
+    </section>      
+          <!--START: reviewsBlock-->
+          <div id="reviewsBlock" class="reviewsBlock" itemprop="review" itemscope itemtype="http://schema.org/Review"> 
+            <!--START: user_reviews-->
+            <div class="user_reviews clearfix">
+              <div class="star-rating"> <span class="reviews-stars rating-[rating]"></span> </div>
+              <div class="review-info">
+                <div class="review-shortDesc" itemprop="name">[short_review]</div>
+                <div class="review-longDesc" itemprop="description">[long_review]</div>
+                <div class="review-images"> 
+                  <!--START: review_image--> 
+                  <a href="assets/product_review_files/[item-name]" data-gallery="review_image" class="MagicZoom" title="[short_review]" data-options="zoomCaption: bottom; hint: off"> <img itemprop="image" src="thumbnail.asp?file=assets/product_review_files/[item-name]&maxx=100&maxy=100" alt="" class="img-responsive" /> </a> 
+                  <!--END: review_image--> 
+                </div>
+                <!--START: rev_allowratings-->
+                <div class="rev_allowratings"> [reviews_helpful]&nbsp;
+                  <input class="btn btnYes btn-default" type="button" value="[reviews_helpyes]" onclick="updateRevStats('[r_id]',[rev_id], 1)" />
+                  <input class="btn btnNo btn-default" type="button" value="[reviews_helpno]" onclick="updateRevStats('[r_id]',[rev_id],-1)" />
+                  <span id="spnReview[rev_id]"><!--START: rev_helpcount--><strong>[rev_helpful]&nbsp;[reviews_of]&nbsp;[rev_votes]</strong>&nbsp;<em>[reviews_found-helpful]</em><!--END: rev_helpcount--></span> </div>
+                <!--END: rev_allowratings--> 
+                <em class="reviewed-by"> Reviewed by:&nbsp;<!--START: review_verified--><span class="verified-buyer">[reviews_verified-buyer]</span>&nbsp;<!--END: review_verified--><span itemprop="author">[user_name]</span> from [user_city] on [review_date] </em>
+                <div style="display: none;" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating"> <span itemprop="ratingValue">[rating]</span></div>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <!--END: user_reviews--> 
+          </div>
+          <!--END: reviewsBlock--> 
+        </div>
+        <!--END: reviews--> 
+        
+        <!--START: qa_tab-->
+        <div id="tab-5" style="display: none;"> <a name="qa"></a>
+          <div class="qa_link button right">[qa_link]</div>
+          <div class="qaBlock"> 
+            <!--START: qa_list-->
+            <div class="qa_list">
+              <div class="qa_question">
+                <h4 class="q"><strong>[productqa_q]</strong> <span id="question[qa_id]">[question]</span> </h4>
+                <div class="q-author"> <em> [productqa_question-submit-by]: <span>[q_user_name]</span> - [q_date_added] </em> </div>
+              </div>
+              
+              <!--START: qa_answers-->
+              <div class="qa_answers">
+                <div class="qa_answer"><strong>[productqa_a]</strong> [answer]</div>
+                <!--START: qa_allowratings-->
+                <div class="qa_allowratings"> [productqa_answer-helpful]&nbsp;
+                  <input type="button" class="btn btnYes btn-default" value="[productqa_helpyes]" onclick="updateQAStats('[ans_id]',[a_id],1)" />
+                  <input type="button" class="btn btnNo btn-default" value="[productqa_helpno]" onclick="updateQAStats('[ans_id]',[a_id],-1)" />
+                  <em><strong><span id="spn[a_id]">[a_helpful]&nbsp;[productqa_of]&nbsp;[a_votes]</span></strong>&nbsp;[productqa_found-helpful]</em> </div>
+                <!--END: qa_allowratings-->
+                <div class="ans-author"><em>[productqa_answer-submit-by]: <span>[a_user_name] ([a_date_added])</span></em></div>
+              </div>
+              <!--END: qa_answers--> 
+              
+              <!--START: qa_noanswers-->
+              <div class="qa_noanswers">[productqa_no-answers]</div>
+              <!--END: qa_noanswers-->
+              
+              <div class="clear"></div>
+              <!--START: qa_allowuserresponse-->
+              <div class="button text-right"> <a href="#" class="qa-answer-btn btn btn-default" data-question="[qa_id]">[productqa_submit-answer] <span class="icon-angle-right"></span></a> </div>
+              <!--END: qa_allowuserresponse-->
+              <div class="clear"></div>
+            </div>
+            <!--END: qa_list-->
+            <div class="button text-right"> <a href="#" class="qaLink btn btn-primary"><i class="icon-help-circled"></i>[productqa_newquestion]</a> </div>
+          </div>
+        </div>
+        <!--END: qa_tab--> 
+        
+        <!--START: extra_field_6_tab-->
+        <div id="tab-6" style="display: none;">
+          <div class="info">[extra_field_6]</div>
+        </div>
+        <!--END: extra_field_6_tab--> 
+        
+        <!--START: extra_field_7_tab-->
+        <div id="tab-7" style="display: none;">
+          <div class="info">[extra_field_7]</div>
+        </div>
+        <!--END: extra_field_7_tab--> 
+        
+        <!--START: extra_field_8_tab-->
+        <div id="tab-8" style="display: none;">
+          <div class="info">[extra_field_8]</div>
+        </div>
+        <!--END: extra_field_8_tab--> 
+        
+        <!--START: extra_field_9_tab-->
+        <div id="tab-9" style="display: none;">
+          <div class="info">[extra_field_9]</div>
+        </div>
+        <!--END: extra_field_9_tab--> 
+        
+        <!--START: extra_field_10_tab-->
+        <div id="tab-10" style="display: none;">
+          <div class="info">[extra_field_10]</div>
+        </div>
+        <!--END: extra_field_10_tab--> 
+        
+        <!--START: extra_field_11_tab-->
+        <div id="tab-11" style="display: none;">
+          <div class="info">[extra_field_11]</div>
+        </div>
+        <!--END: extra_field_11_tab--> 
+        
+        <!--START: extra_field_12_tab-->
+        <div id="tab-12" style="display: none;">
+          <div class="info">[extra_field_12]</div>
+        </div>
+        <!--END: extra_field_12_tab--> 
+        
+        <!--START: extra_field_13_tab-->
+        <div id="tab-13" style="display: none;">
+          <div class="info">[extra_field_13]</div>
+        </div>
+        <!--END: extra_field_13_tab--> 
+      </div>
+      <!--END: tabs--> 
+      
+      <!--START: rewardsPoints-->
+      <div class="rewardsPointsBlock sub-section">
+        <div class="header">
+          <h3 class="page_heading">[product_Header-rewards]</h3>
+        </div>
+        <div class="item" id="divRewardPoint">[product_rewardsDescription]</div>
+      </div>
+      <!--END: rewardsPoints--> 
+  
+      
+      <!--START: accessories_0-->
+      <div class="accessoriesBlock sub-section">
+        <div class="header">
+          <h3 class="page_heading">[product_Header-accessories]</h3>
+        </div>
+        <!--START: accessories_items0-->
+        <div class="product-items product-items-[product-cols-number]"> 
+          <!--START: ITEM_TEMPLATE--> 
+          [product_items] 
+          <!--END: ITEM_TEMPLATE--> 
+        </div>
+        <!--END: accessories_items0--> 
+      </div>
+      <!--END: accessories_0-->
+    </form>
+		</div>
+		<div class="col-md-2">
+		<!--START: browsing_history-->
+<section class="browsing_historyBlock">
+  <div class="text-center">
+	        <h3>[product_browsing-history-header]</h3>
+    <div class="header clearfix">
+
+      
+		<!--
+		<div class="history-disable-btn pull-right">
+        <button type="button" onclick="window.location.href = 'product.asp?itemid=[item_id]&delhist=0';" class="btn btn-default"> -->
+        <!--START: browsing_history_enable--> 
+       <!-- [product_browsing-history-disable] --> 
+        <!--END: browsing_history_enable--> 
+         <!--</button> 
+      </div>-->
+    </div>
+
+    <div class="product-carousel flexslider"> 
+      <!--START: browsing_history_items-->
+      <ul class="product-items product-items-[product-cols-number] slides">
+        <!--START: browsing_history_item-->
+        <li class="product-item" data-catalogid="[catalogid]" data-ajaxcart="1" data-addcart-callback="addcart_callback">
+          <div class="img"> <a href="product.asp?itemid=[catalogid]"> <img src="[THUMBNAIL]" alt="[name]" class="img-responsive" /> </a> 
+            <!--START: quickview-->
+            <button class="quickview" data-toggle="modal">Quick View</button>
+            <!--END: quickview--> 
+          </div>
+          <div class="name"> <a href="product.asp?itemid=[catalogid]">[name]</a> </div>
+          <div class="price"> 
+            <!--START: ITEMPRICE--> 
+            <span class="regular-price">[ITEMPRICE]</span> 
+            <!--END: ITEMPRICE--> 
+            <!--START: SALEPRICE--> 
+            <del class="regular-price">[ITEMPRICE]</del> <span class="sale-price">[ITEMSALEPRICE]</span> <span class="on-sale-badge">[product_sale]</span> 
+            <!--END: SALEPRICE--> 
+          </div>
+          <div class="reviews"> 
+            <!--START: product_review--> 
+            <!--START: product_review_average--> 
+            <span class="reviews-stars rating-[review_average]"></span> <span class="reviews-count">([review_count])</span> 
+            <!--END: product_review_average--> 
+            <!--END: product_review--> 
+          </div>
+          <div class="action"> <a href="product.asp?itemid=[item_id]&delhist=[catalogid]" class="btn btn-default"> Add to Cart </a> </div>
+        </li>
+        <!--END: browsing_history_item-->
+      </ul>
+      <!--END: browsing_history_items--> 
+    </div>
+<!--END: browsing_history--> 	
+	
+			<!--START: related_0-->
+			<div class="relatedBlock sub-section">
+				<div class="header">
+					<h3 class="page_heading">[product_Header-relateditems]</h3>
+				</div>
+				<h3>Related Items</h3>
+				<!--START: related_items0-->
+				<div class="product-items product-items-[product-cols-number]">
+					<!--START: ITEM_TEMPLATE-->
+					[product_items]
+					<!--END: ITEM_TEMPLATE-->
+				</div>
+				<!--END: related_items0-->
+			</div>
+			<!--END: related_0-->		
+	</div> 
+			</div> 
+		  
+		  
+		  
+      
+		</div>   
+  </div>
+	
+	</div> 
+</section>
+
+
+
+<!--START: requestsampleform-->
+<form id="frmSampleAdd" name="frmSampleAdd" method="post" action="add_cart.asp?item_id=[catalogid]&quick=1&action=requestSample">
+  <input type="hidden" name="item_id" value="[catalogid]" />
+  <input type="hidden" name="itemid" value="[id]" id="itemid" />
+  <input type="hidden" name="category_id" value="[catid]" />
+</form>
+<!--END: requestsampleform--> 
+
+<!--START: CATEGORY_FOOTER-->
+<section class="category-footer">
+  <div class="container">[CONTENT]</div>
+</section>
+<!--END: CATEGORY_FOOTER--> 
+
+<!--START: template_scripts--> 
+<script type="text/javascript" src="/assets/templates/common-core/lib/utilities.js"></script> 
+<script type="text/javascript" src="/assets/templates/common-core/lib/flexslider/jquery.flexslider-min.js"></script> 
+<script>
+    var mzOptions = {};
+    mzOptions = {
+        onUpdate: function() {
+            jQuery('#imagecaptiont').text(jQuery(arguments[2]).attr('title'));
+        }
+    };
+</script> 
+<script type="text/javascript" src="/assets/templates/common-core/lib/magiczoomplus/magiczoomplus.js"></script> 
+<script type="text/javascript" src="/assets/templates/common-core/lib/responsiveTabs/js/jquery.responsiveTabs.min.js"></script> 
+<script type="text/javascript" src="/assets/templates/common-core/js/listing.js"></script> 
+<!--START: qaScript--> 
+<script type="text/javascript" src="/assets/templates/common-core/js/listing-qa.js"></script> 
+<!--END: qaScript--> 
+
+<!--START: reviewsScript--> 
+<script type="text/javascript" src="/assets/templates/common-core/js/jquery.ui.widget.js"></script> 
+<script type="text/javascript" src="/assets/templates/common-core/js/jquery.iframe-transport.js"></script> 
+<script type="text/javascript" src="/assets/templates/common-core/js/jquery.fileupload.js"></script> 
+<script type="text/javascript" src="/assets/templates/common-core/js/listing-reviews.js"></script> 
+<!--END: reviewsScript--> 
+
+<!--START: counterScript--> 
+<script type="text/javascript" src="assets/templates/common-core/lib/countdown.js"></script> 
+<!--END: counterScript--> 
+
+<!--START: stripe_applepay_button_js--> 
+[stripeApplePay_js] 
+<!--END: stripe_applepay_button_js--> 
+
+<!--START: recaptcharobot_js--> 
+<script>
+	var CaptchaCallback = function () {
+		jQuery('.recaptchaRobot').each(function (index, element) {
+			var id = jQuery(element).attr('id');
+			var widgetId = '';
+			widgetId = grecaptcha.render(id);
+			jQuery(element).attr('data-widgetId', widgetId);
+		});
+	};
+</script> 
+<script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit" async defer></script> 
+<!--END: recaptcharobot_js--> 
+<script>
+// Hides Stock Qty when 0
+$( document ).ready(function() {
+  if ($('.stockqtyvalue').html() <= 0) {
+   $(".stockqty").hide();
+               //$(".stockqty").html('More on the Way<br>');
+               $("#product_availability-timer").hide();
+  }
+});
+</script>
+<!--END: template_scripts--> 
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/lib/magiczoomplus/magiczoomplus.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/assets/templates/common-core/lib/flexslider/flexslider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/assets/templates/common-core/lib/responsiveTabs/css/responsive-tabs.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/listing.css" type="text/css" media="screen" />
+<!--END: template_styles-->
+
+<!--START: script to highlight selected radio box--> 
+<script> 
+$(document).ready(function(){
+    $("input:checked").parent().css({"color": "#0C172B", "border": "2px solid #0C172B"});
+});
+
+
+</script>
+<!--END: script to highlight selected radio box--> 
+<!---START: accordion script to highlight active tab --> 
+<script> 
+$(document).ready(function() {
+  $('#collapse1').on('show.bs.collapse', function () {
+    $(this).siblings('.panel-heading').addClass('active');
+	  	  $("#active-icon").html('<i class="material-icons display-block">expand_more</i>');
+	  
+  });
+
+  $(' #collapse1').on('hide.bs.collapse', function () {
+    $(this).siblings('.panel-heading').removeClass('active');
+	 	  $("#active-icon").html('<i class="material-icons display-block">expand_less</i>');
+  });
+	
+	  $('#collapse2').on('show.bs.collapse', function () {
+    $(this).siblings('.panel-heading').addClass('active');
+	  	  $("#active-icon2").html('<i class="material-icons display-block">expand_more</i>');
+	  
+  });
+
+  $('#collapse2').on('hide.bs.collapse', function () {
+    $(this).siblings('.panel-heading').removeClass('active');
+	 	  $("#active-icon2").html('<i class="material-icons display-block">expand_less</i>');
+  });
+	
+	
+	
+});
+
+</script> 
+
+<!-- hide review stars if zero --> 
+
+
+
+<!--Start: script to highlight options --> 
+	<script> 	
+						var catalog_id = [catalogid]; 
+						var input_name = document.querySelectorAll('input[value="[catalogid]"]')[1].name.toString(); 
+					
+						var filter_for_number = input_name.replace(/\D+/g, '');
+			           
+						document.getElementById(filter_for_number).style.color = (
+						'#189118'); 
+		document.getElementById(filter_for_number).style.border = ( 
+						'1px solid #189118'); 
+		document.getElementById(filter_for_number).style.background = ('#16811647'); 
+						
+	</script> 
+
+<!--END: script to highlight options --> 
+<!--START: show more text product descriptions--> 
+
+<script>
+
+$(document).ready(function() {
+	var showChar = 400;
+	var ellipsestext = "...";
+	var moretext = "more";
+	var lesstext = "less";
+	$('.more').each(function() {
+		var content = $(this).html();
+
+		if(content.length > showChar) {
+
+			var c = content.substr(0, showChar);
+			var h = content.substr(showChar-1, content.length - showChar);
+
+			var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+
+			$(this).html(html);
+		}
+
+	});
+
+	$(".morelink").click(function(){
+		if($(this).hasClass("less")) {
+			$(this).removeClass("less");
+			$(this).html(moretext);
+		} else {
+			$(this).addClass("less");
+			$(this).html(lesstext);
+		}
+		$(this).parent().prev().toggle();
+		$(this).prev().toggle();
+		return false;
+	});
+});
+ </script>
+
+<!--END: show mroe text product descriptions--> 
+
+
+<!--Start: script tp slice related block beneath cart button --> 
+<Script> 
+$(document).ready(function() {
+	$(".relatedBlock .product-item").slice(1).hide(); 
+});
+</Script>
+
+
+<!--start: script to make vertical flow flexslider permanent --> 
+
+<script> 
+jQuery(window).on("load", function () {
+		jQuery('.flexslider').attr("direction", "vertical");
+
+		setTimeout(function () {
+			jQuery('#addl-images').addClass('addl-images-ready');
+			window.dispatchEvent(new Event('resize'));
+		}, 100);
+	});
+
+</script>
+
+<script>
+$(document).ready(function() {
+	
+	  $("#listing-cut-chain .page_heading").after("<h2>Specify Length of Chain Sections</h2>").hide();
+	});
+
+</script>
+
+
