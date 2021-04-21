@@ -17,6 +17,103 @@
 </section>
 <!--END: CATEGORY_FULLINE--> 
 
+<!-- The myUpsModalClass -->
+
+<div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade ups-modal-opaque-bg" style="background-color: rgba(0,0,0, 0.5);" tabindex="-1" id="myModal" role="dialog">
+    <div class="modal-dialog" role="document">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="max-height: 100vh; height: 100%;">
+        <div class="modal-header ups-modal-header">
+          <button type="button" class="close-ups" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="color: azure;">Estimated Delivery Dates</h4>
+
+          
+        </div>
+        <div class="modal-body">
+
+          <div id="api-error-div" class="alert alert-danger alert-dismissible fade" role="alert" style="display: none;">
+            <button type="button" class="close-ups" data-dismiss="alert" aria-label="Close" style="float: right;"><span aria-hidden="true">&times;</span></button>
+            <span id="api-error-msg"></span>
+          </div>
+
+          <label for="ups-ship-to-zip" class="control-label">Postal Code</label>
+          
+          <div class="input-group">
+            <input type="text" class="form-control" value="89145" id="ups-ship-to-zip" placeholder="Postal Code">
+            <span class="input-group-btn">
+              <button class="btn btn-default" id="fetch-shipping-dates">Update</button>
+              <button class="btn btn-default" id="set-zip-code">Use Location</button>
+            </span>
+          </div>
+
+          <div style="margin-top: 24px;">
+            <!-- Style these as headers -->
+            <span class="ups-modal-heading">Est. Arrival</span>
+            <span class="pull-right ups-modal-heading">Service Level</span>
+            <hr style="margin-top: 2px;"/>
+          </div>
+
+          <div>            
+            <strong><span id="SRP">Loading...</span></strong>
+            <span class="pull-right ups-modal-shipping-service">U.S. Postal Service (UPS Surepost)</span>
+          </div>       
+          <hr />
+          
+          <div>            
+            <strong><span id="GND">Loading... </span></strong>
+            <span class="pull-right ups-modal-shipping-service">UPS Ground</span>
+          </div>       
+          <hr />
+
+          <div>
+            <strong><span id="3DS">Loading... </span> </strong>
+            <span class="pull-right ups-modal-shipping-service">UPS 3 Day Select</span>
+          </div>
+          <hr />
+
+          <div>
+            <strong><span id="2DA">Loading... </span></strong> 
+            <span class="pull-right ups-modal-shipping-service">UPS 2nd Day Air</span>    
+          </div>         
+          <hr />
+
+
+          <div>
+            <strong><span id="1DP">Loading... </span></strong>
+            <span class="pull-right ups-modal-shipping-service">UPS Next Day Air Saver</span>
+          </div>
+          <hr />
+
+          <div>
+            <strong><span id="1DA">Loading... </span></strong>
+            <span class="pull-right ups-modal-shipping-service">UPS Next Day Air</span>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <p class="text-left" style="font-size: 11px;">
+            *Estimated delivery dates are shown for this product only. 
+            Delivery date may change with additions to cart. Final delivery date can be seen in your cart.
+            <a href="https://www.e-rigging.com/shipping-questions-or-assistance">
+              For more information on processing and transit times see our shipping page.
+            </a>
+          </p>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!--END: UPS-MODAL -->
+
+
 <!--START: CATEGORY_HEADER-->
 <section class="category-header">
   <div class="container">[CONTENT]</div>
@@ -884,10 +981,7 @@ function closeBox() {
             <div class="availabilityInfo"> <span class="availability-header">[product_Header-availability]</span> 
               <!--START: product_availability--> 
               <span id="availability" class="product_availability availability-item"><span class="stockqtyvalue stockqty" id="currentStock">[stock]</span><span class="stockqty">&nbsp;</span>[availability_itemprop]</span>
-				
-				<div class="order-tool"><i class="material-icons" id="material-icon">info</i>
- 					 <span class="order-tooltext">Orders ship same day if placed before 2PM CT. All items in your cart must be listed as In Stock. Place separate orders on in-stock and back ordered items if you want same day shipping. Applies to UPS shipping methods only, LTL Freight may go out same day if carrier pick-up schedule permits.</span>
-				</div>
+
 				
 				
 <!--
@@ -903,17 +997,29 @@ info
 });</Script>
 -->
 
-              <div id="product_availability-timer">
-              	<span id="cutoff-day"></span><br />
-        		<span id="cutoff-text"></span><br />
-        		<p id="cutoff-timer" class="price bulkprice"></p>
+              <div id="product_availability-timer" style="padding-top: 10px;">
+                <div id="ups-pickup-date" style="display: none;"></div>
+
+                <!--START: freeshippingblock--> 
+                <div><span class="freeshipping availability-item">[freeshipping]</span> </div>
+                <!--END: freeshippingblock--> 
+              	<span id="cutoff-day" style="font-size: 18px;"></span>
+                
+                <div class="order-tool"><i class="material-icons" id="material-icon" style="vertical-align: middle">info</i>
+                  <span class="order-tooltext">Orders ship same day if placed before 2PM CT. All items in your cart must be listed as In Stock. Place separate orders on in-stock and back ordered items if you want same day shipping. Applies to UPS shipping methods only, LTL Freight may go out same day if carrier pick-up schedule permits.</span>
+                </div>
+
+                <br />
+              	
+                <span id="cutoff-text"></span><br />
+                <p id="cutoff-timer" class="price bulkprice"></p>
+                <!-- Modal Button -->
+                <p id="ups-modal-arrive-button" data-toggle="modal" data-target="#myModal"  style="color: rgb(14, 14, 214); cursor: pointer; width: 95%; border-radius: 4px; font-size: 18px;">
+                  When will it arrive?
+                </p>
+                <!-- End Modal button -->
               </div>
               <!--END: product_availability--> 
-              <!--START: freeshippingblock--> 
-              <span class="freeshipping availability-item">[freeshipping]</span><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-  Tooltip on top
-</button> 
-              <!--END: freeshippingblock--> 
             </div>
 			
 				<!--START: addtocart--> 
@@ -1253,7 +1359,7 @@ $(document).ready(function(){
 		  </div> 
 		  
         <div  style="display:none" id="tab-3">
-		   <div class="item" itemprop="description">			  
+		   <div class="item" itemprop="review">			  
 			  	<!-- TrustBox widget - Product Reviews -->
 				<!--<div class="trustpilot-widget" data-locale="en-US" data-template-id="544a426205dc0a09088833c6" data-businessunit-id="5a797495083a4b00016dba93" data-style-height="700px" data-style-width="100%" data-theme="light" data-sku="[id]" data-review-languages="en">
 				<a href="https://www.trustpilot.com/review/e-rigging.com" target="_blank" rel="noopener">Trustpilot</a>
@@ -1276,12 +1382,8 @@ $(document).ready(function(){
           <div class="pull-right form-group">
             <label>[reviews_sorting]</label>
             <label>
-              <select name="review_sorting" onchange="javascript:ReviewSortingChange();" class="form-control" customoption="customoption">
-                
-                
+              <select name="review_sorting" onchange="javascript:ReviewSortingChange();" class="form-control" customoption="customoption">     
 								[dropdown_reviews_sorting]
-							
-              
               </select>
             </label>
           </div>
@@ -1290,7 +1392,9 @@ $(document).ready(function(){
           <div class="clearfix"></div>
           
           <!--START: reviewsBlock-->
-          <div id="reviewsBlock" class="reviewsBlock" itemprop="review" itemscope itemtype="http://schema.org/Review"> 
+          <div id="reviewsBlock" class="reviewsBlock" itemprop="review" > 
+			  <div property="itemReviewed" typeof="[name]">
+<!--			  itemscope itemtype="http://schema.org/Review"-->
             <!--START: user_reviews-->
             <div class="user_reviews clearfix">
               <div class="star-rating"> <span class="reviews-stars rating-[rating]"></span> </div>
@@ -1309,12 +1413,15 @@ $(document).ready(function(){
                   <span id="spnReview[rev_id]"><!--START: rev_helpcount--><strong>[rev_helpful]&nbsp;[reviews_of]&nbsp;[rev_votes]</strong>&nbsp;<em>[reviews_found-helpful]</em><!--END: rev_helpcount--></span> </div>
                 <!--END: rev_allowratings--> 
                 <em class="reviewed-by"> Reviewed by:&nbsp;<!--START: review_verified--><span class="verified-buyer">[reviews_verified-buyer]</span>&nbsp;<!--END: review_verified--><span itemprop="author">[user_name]</span> from [user_city] on [review_date] </em>
-                <div style="display: none;" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating"> <span itemprop="ratingValue">[rating]</span></div>
+                <div style="display: none;" itemprop="reviewRating" > 
+<!--					itemscope itemtype="http://schema.org/Rating"-->
+					<span itemprop="ratingValue">[rating]</span></div>
               </div>
               <div class="clear"></div>
             </div>
             <!--END: user_reviews--> 
           </div>
+			   </div>
           <!--END: reviewsBlock--> 
         </div>
         <!--END: reviews--> 
@@ -1531,7 +1638,8 @@ $(document).ready(function(){
 <!--END: CATEGORY_FOOTER--> 
 
 <!--START: template_scripts--> 
-	  <script type="text/javascript" src="assets/templates/[template]/js/OrderShipBy.js"></script>
+<script type="text/javascript" src="assets/templates/[template]/js/OrderShipBy.js"></script>
+<script type="text/javascript" src="assets/templates/[template]/js/apiTestScript.js"></script>
 <script type="text/javascript" src="/assets/templates/common-core/lib/utilities.js"></script> 
 <script type="text/javascript" src="/assets/templates/common-core/lib/flexslider/jquery.flexslider-min.js"></script> 
 <script>
@@ -2045,7 +2153,7 @@ var qty = document.getElementById("qty-0").value;
 </div>
 	
 	
-	<script src="/assets/templates/ERC-Core/js/content-data.js/"></script>
+	<script src="/assets/templates/ERC-Core/js/content-data.js"></script>
 	
 
 

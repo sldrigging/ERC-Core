@@ -951,9 +951,7 @@ function closeBox() {
               <!--START: product_availability--> 
               <span id="availability" class="product_availability availability-item"><span class="stockqtyvalue stockqty" id="currentStock">[stock]</span><span class="stockqty">&nbsp;</span>[availability_itemprop]</span>
 				<br>
-				<div class="order-tool"><i class="material-icons" id="material-icon" style="vertical-align: middle">info</i>
- 					 <span class="order-tooltext">Orders ship same day if placed before 2PM CT. All items in your cart must be listed as In Stock. Place separate orders on in-stock and back ordered items if you want same day shipping. Applies to UPS shipping methods only, LTL Freight may go out same day if carrier pick-up schedule permits.</span>
-				</div>
+
 <!--
 		  		<a style="padding:0;" type="button" class="btn btn-secondary shipping-tooltip" data-toggle="tooltip" data-placement="left" data-animation="true" data-template="<div class='tooltip' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'></div></div>" title="Orders ship same day if placed before 2PM CT. All items in your cart must be listed as In Stock. Place separate orders on in-stock and back ordered items if you want same day shipping. Applies to UPS shipping methods only, LTL Freight may go out same day if carrier pick-up schedule permits.">
 <i class="material-icons" id="material-icon">
@@ -969,7 +967,16 @@ info
               
               <div id="product_availability-timer" style="padding-top:10px;">
                 <div id="ups-pickup-date" style="display: none;"></div>
-              	<span id="cutoff-day" style="font-size: 18px;"></span><br />
+                <!--START: freeshippingblock--> 
+                <div><span class="freeshipping availability-item">[freeshipping]</span> </div>
+                <!--END: freeshippingblock--> 
+              	<span id="cutoff-day" style="font-size: 18px;"></span>
+                
+                <div class="order-tool"><i class="material-icons" id="material-icon" style="vertical-align: middle">info</i>
+                  <span class="order-tooltext">Orders ship same day if placed before 2PM CT. All items in your cart must be listed as In Stock. Place separate orders on in-stock and back ordered items if you want same day shipping. Applies to UPS shipping methods only, LTL Freight may go out same day if carrier pick-up schedule permits.</span>
+                </div>
+
+                <br />
 				        <span id="outOfStock"></span>
         		    <span id="cutoff-text"></span><br />
         		    <p id="cutoff-timer" class="price bulkprice"></p>
@@ -979,11 +986,7 @@ info
                 <!-- End Modal button -->
               </div>
               <!--END: product_availability--> 
-              <!--START: freeshippingblock--> 
-              <span class="freeshipping availability-item">[freeshipping]</span><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-  Tooltip on top
-</button> 
-              <!--END: freeshippingblock--> 
+
             </div>
 
 			
@@ -1375,7 +1378,7 @@ $(document).ready(function(){
 		  </div> 
 		  
 		  <div  style="display:none" id="tab-3" >
-		   <div class="item" itemprop="description">			  
+		   <div class="item" itemprop="review">			  
 			  	<!-- TrustBox widget - Product Reviews -->
 				<!--<div class="trustpilot-widget" data-locale="en-US" data-template-id="544a426205dc0a09088833c6" data-businessunit-id="5a797495083a4b00016dba93" data-style-height="700px" data-style-width="100%" data-theme="light" data-sku="[id]" data-review-languages="en">
 				<a href="https://www.trustpilot.com/review/e-rigging.com" target="_blank" rel="noopener">Trustpilot</a>
@@ -1393,31 +1396,24 @@ $(document).ready(function(){
 		  
         
         <!--START: reviews-->
-        <div id="tab-4" > 
-          
+        <div id="tab-4" >           
           <!--START: reviews_sorting-->
           <div class="pull-right form-group">
             <label>[reviews_sorting]</label>
             <label>
-              <select name="review_sorting" onchange="javascript:ReviewSortingChange();" class="form-control" customoption="customoption">
-                
-                
-								[dropdown_reviews_sorting]
-							
-              
+              <select name="review_sorting" onchange="javascript:ReviewSortingChange();" class="form-control" customoption="customoption">  
+								[dropdown_reviews_sorting]	
               </select>
             </label>
           </div>
-          <!--END: reviews_sorting-->
-          
-          <div class="clearfix"></div>
-          
+          <!--END: reviews_sorting-->          
+          <div class="clearfix"></div>          
           <!--START: reviewsBlock-->
-          <div id="reviewsBlock" class="reviewsBlock" itemprop="review" itemscope itemtype="http://schema.org/Review"> 
+          <div id="reviewsBlock" class="reviewsBlock" itemprop="review" >
+			  <div property="itemReviewed" typeof="[name]">
+<!--			  itemscope itemtype="http://schema.org/Review"> -->
             <!--START: user_reviews-->
-            <div class="user_reviews clearfix">
-					
-				
+            <div class="user_reviews clearfix">	
               <div class="star-rating"> <span class="reviews-stars rating-[rating]"></span> </div>
               <div class="review-info" style="padding-bottom: 30px; border-bottom: 2px solid #e4e4e4;">
                 <div class="review-shortDesc" itemprop="name">[short_review]</div>
@@ -1426,10 +1422,7 @@ $(document).ready(function(){
                   <!--START: review_image--> 
                   <a href="assets/product_review_files/[item-name]" data-gallery="review_image" class="MagicZoom" title="[short_review]" data-options="zoomCaption: bottom; hint: off;"> <img itemprop="image" src="thumbnail.asp?file=assets/product_review_files/[item-name]&maxx=100&maxy=100" alt="" class="img-responsive" /> </a> 
                   <!--END: review_image--> 
-                </div>
-				  
-				
-				  
+                </div>	
                 <!--START: rev_allowratings-->
                 <div class="rev_allowratings"> [reviews_helpful]&nbsp;
                   <input class="btn btnYes btn-default" type="button" value="[reviews_helpyes]" onclick="updateRevStats('[r_id]',[rev_id], 1)" />
@@ -1437,9 +1430,10 @@ $(document).ready(function(){
                   <span id="spnReview[rev_id]"><!--START: rev_helpcount--><strong>[rev_helpful]&nbsp;[reviews_of]&nbsp;[rev_votes]</strong>&nbsp;<em>[reviews_found-helpful]</em><!--END: rev_helpcount--></span> </div>
                 <!--END: rev_allowratings--> 
                 <em class="reviewed-by"> Reviewed by:&nbsp;<!--START: review_verified--><span class="verified-buyer">[reviews_verified-buyer]</span>&nbsp;<!--END: review_verified--><span itemprop="author">[user_name]</span> from [user_city] on [review_date] </em>
-                <div style="display: none;" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating"> <span itemprop="ratingValue">[rating]</span></div>
-              </div>
-				
+                <div style="display: none;" itemprop="reviewRating" > 
+<!--					itemscope itemtype="http://schema.org/Rating"-->
+					<span itemprop="ratingValue">[rating]</span></div>
+              </div>			
 					
 				
               <div class="clear"></div>
@@ -1448,6 +1442,7 @@ $(document).ready(function(){
           </div>
           <!--END: reviewsBlock--> 
         </div>
+			</div>
         <!--END: reviews--> 
         
         <!--START: qa_tab-->

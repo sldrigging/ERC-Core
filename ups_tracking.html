@@ -1,199 +1,405 @@
 <!--START: BODY_HEADER-->
 <section class="breadcrumnb">
-    <div class="container">
-        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
-            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
-            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="myaccount.asp">My Account</a></li>
-            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">UPS Tracking Tool</li>
-        </ol>
-    </div>
+<div class="container">
+  <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+	<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+	<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="myaccount.asp">My Account</a></li>
+	<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">UPS Tracking Tool</li>
+  </ol>
+</div>
 </section>
 <!--END: BODY_HEADER-->
 
 <section class="page_header">
-    <div class="container">
-        <h1 class="page_heading"><img src="/admin/templates/images/ups_logo.gif" alt="UPS" /> UPS Tracking Tool</h1>
-    </div>
+<div class="container">
+  <h1 class="page_heading">Shipment Tracker</h1>
+</div>
 </section>
+<section class="page-content">
+<div class="container">
+  <div class="content-area"> 
+	<!--START: results-->
+	<div class="row tracking_details">
+	  <div class="tracking-div-parent">
+		<div class="tracking-div" >
+		  <div class="newbar" style=" margin-bottom: 0px; padding-left: 23px;">Tracking Details: <span style="font-size: 18px;">[trackno]</span></div>
+		  <div  style="margin-bottom: 25px; padding-top: 16px; padding-bottom: 6px; padding-left: 15px;">
+			<div style="margin-top:0; margin-bottom: 4px; font-size:21px; padding-left:15px;"><strong id="statusHeading">Delivered</strong></div>
+			<div id="progressbar-div" class="progress" style="margin-right: 25px; margin-left: 15px;">
+			  <div id="progressbar" class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 0%"> <span id="sr-span" class="sr-only">0% Complete</span> </div>
+			</div>
+			<!--START: shipper_number-->
+			<div class="col-md-12" style="padding-bottom: 6px;">
+			  <label for="Shipper-Number">Shipper:</label>
+			  [shipper_number]</div>
+			<!--END: shipper_number-->
+			<div class="clearfix"></div>
+			<!--START: service_description-->
+			<div class="col-md-12" style="padding-bottom: 6px;">
+			  <label for="service_description">Service:</label>
+			  [service_description]</div>
+			<!--END: service_description-->
+			<div class="clearfix"></div>
+			<!--START: delivery_date-->
+			<div class="col-md-12" style="padding-bottom: 6px;">
+			  <label for="delivery_date">Arrives:</label>
+			  [delivery_date]</div>
+			<!--END: delivery_date-->
+			<div class="clearfix"></div>
 
-<section id="fedexTracking" class="page-content">
-    <div class="container">
-        <div class="content-area">
-            <!--START: results-->
-            <div class="row tracking_titles titles2">
-				<div class="col-md-12 col-sm-12">
-			
+			<!--START: redelivery_date-->
+			<div class="col-md-12" style="padding-bottom: 6px;">
+			  <label for="redelivery_date">Re-Sched. Delivery Date:</label>
+			  [redelivery_date]</div>
+			<!--END: redelivery_date-->
+			<div class="clearfix"></div>
+			<!--START: shipto_address-->
+
+			<div class="col-md-12" style="padding-bottom: 5px;">
+			  <label for="shipto_address">Ship To: </label>
+			  <span class="location"> [shipto_address]</span> </div>
+			<div class="clearfix"></div>
+
+			<!--END: shipto_address--> 
+		  </div>
+		</div>
+		<div class="tracking-div hidden-md hidden-sm hidden-xs" >
+		  <div class="newbar" style="margin-bottom: 0px; padding-left: 15px; padding-bottom: 25x">Track Order </div>
+		  <div  style="padding-top: 22px; padding-bottom: 25px; margin-bottom: 20px; padding-left: 15px; padding-right: 15px;"> 
+			<!-- Tracking button UPS-->
+			<div class="trackingModule">
+			  <form method="post" action="shiptracking.asp" name="form1">
+				<div class="trackingField">
+				  <div class="form-group">
+					<div class="formField">
+					  <div class="col-sm-12">
+						<label for="trackno">UPS Tracking Number:</label>
+					  </div>
+					  <div class="col-sm-12">
+						<input type="text" size="30" name="trackno" value="[trackno]" placeholder="##########" maxlength="30" class="txtBoxStyle form-control" />
+					  </div>
+					  <div class="clearfix"></div>
+					</div>
+					<div class="formField ups-terms">
+					  <div class="col-sm-12"> <span class="form-inline">
+						<input type="checkbox" id="checkbox" class="checkbox" value="ON" name="agree" checked/>
+						</span> <span>
+						<label class="terms-conditions" for="checkbox">By selecting this box and the &quot;Track Package&quot; button, I agree to these </label>
+						<a data-toggle="modal" data-target="#viewlicense"><strong>Terms and Conditions</strong></a>. </span> </div>
+					  <div class="clearfix"></div>
+					</div>
+					<div class="formField">
+					  <div class="col-sm-12"> <span class="view-lic-button">
+						<button type="button" class="btn btn-default" data-toggle="modal" data-target="#viewlicense">View License</button>
+						</span> <span class="track-pkg-button">
+						<input onclick="checkaccept()" type="button" value="Track Package" class="btn btn-primary btn-block" />
+						</span> </div>
+					  <div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="ups-disclaimer">
+					  <div class="col-sm-12">UPS&reg;, UPS &amp; Shield Design&reg; and UNITED PARCEL SERVICE&reg; are registered trademarks of United Parcel Service of America, Inc.</div>
+					</div>
+				  </div>
+				</div>
+			  </form>
+			  <a style="padding-left: 15px;" target="_blank" href="https://www.ups.com/track?loc=null&tracknum=[trackno]">Track it via UPS.com</a> </div>
+			<!-- Tracking button --> 
+		  </div>
+		</div>
+		<!--   tracking div end--> 
+	  </div>
+	  <div class="tracking-divb-parent">
+		<div class="tracking_activity tracking-div" style="margin-top: 0px; display: flex; flex-direction: column-reverse;"> 
+
+		  <!--START: activity-->
+
+		  <div class="row barcontent-reverse">
+			<div class="col-md-12 activity-bar" style="margin-top: 15px; padding-top: 5px;">
+			  <div class="col-md-4 status"> <strong>[description]</strong>
+				<div class="visibile-xs" style="margin-bottom: 20px;"></div>
+			  </div>
+			  <div class="col-md-4"> [date_time] </div>
+			  <div class="col-md-4 location" style="margin-bottom: 20px;"> [location] </div>
+			</div>
+		  </div>
+		  <!--END: activity-->
+		  <div class="row trackingStatus_titles titles3 newbar" style=" width: 100%; padding-top: 12px; padding-bottom: 12px;">
+			<div class="col-md-4 col-sm-4">
+			  <label class="hidden-sm hidden-xs" for="desc" style="font-size: 20px;">Activity</label>
+			</div>
+			<div class="col-md-4 col-sm-4" >
+			  <label class="hidden-sm hidden-xs"  for="date-time" style="font-size: 20px;">Date</label>
+			</div>
+			<div class="col-md-4 col-sm-4">
+			  <label class="hidden-sm hidden-xs" for="loc" style="font-size: 20px;">Location</label>
+			</div>
+			<div class="col-md-12 hidden-md hidden-lg">
+			  <label class="hidden-md hidden-lg" style="font-size: 20px;">Shipment Progress</label>
+			</div>
+		  </div>
+		  <!--END: results--> 
+
+		</div>
+
+
+		<div class="tracking-div hidden-md hidden-sm hidden-xs" style="display:inline-block; background: none; box-shadow: none;">
+		  <div class="newbar" style="margin-bottom: 0px; padding-left: 23px; padding-bottom: 17px; padding-top: 16px; font-size: 20px;"><strong>Freight Tracking</strong></div>
+		  <div class="barcontent" style="padding-top: 12px; padding-bottom: 10px; padding-left: 26px; padding-right: 15px;">
+			<div>
 				
-                <div class="col-md-12 col-sm-12">
-                    <h4 class="page_heading">Tracking Details: [trackno]</h4>
-                </div>
-            </div>
-            <div class="row tracking_details">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <!--START: shipper_number-->
-                    <div class="row">
-                        <div class="col-sm-4 col-xs-4"><label for="Shipper-Number">Shipper Number:</label></div>
-                        <div class="col-sm-8 col-xs-8">[shipper_number]</div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <!--END: shipper_number-->
-                    <!--START: service_description-->
-                    <div class="row">
-                        <div class="col-sm-4 col-xs-4"><label for="service_description">Service Description:</label></div>
-                        <div class="col-sm-8 col-xs-8">[service_description]</div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <!--END: service_description-->
-                    <!--START: delivery_date-->
-                    <div class="row">
-                        <div class="col-sm-4 col-xs-4"><label for="delivery_date">Sched. Delivery Date:</label></div>
-                        <div class="col-sm-8 col-xs-8">[delivery_date]</div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <!--END: delivery_date-->
-                    <!--START: redelivery_date-->
-                    <div class="row">
-                        <div class="col-sm-4 col-xs-4"><label for="redelivery_date">Re-Sched. Delivery Date:</label></div>
-                        <div class="col-sm-8 col-xs-8">[redelivery_date]</div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <!--END: redelivery_date-->
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12">
+			  <div style="margin: 5px;"><a target="_blank" href="https://e-rigging.com/track-order.html">E-Rigging LTL Tracker</a></div>
+			  <div style="margin: 5px;"><a target="_blank" href="https://www.saia.com/track">Saia</a></div>
+			  <div style="margin: 5px;"><a target="_blank" href="https://www.fedex.com/en-us/tracking.html">Fedex Freight</a></div>
+			  <div style="margin: 5px;"><a target="_blank" href="https://www.aaacooper.com/Transit/ProTrackResults.aspx">AAA Cooper</a></div>
+			  <div style="margin: 5px;"><a target="_blank" href="http://www.centraltransportint.com/confirm/trace.aspx">Central Transport</a></div>
+			  <div style="margin: 5px;"><a target="_blank" href="https://sefl.com/Tracing/servlet/TRACING_TRACE_BY_PRO">Southeastern Freight Lines</a></div>
+			  <div style="margin: 5px;"><a target="_blank" href="https://www.estes-express.com/myestes/shipment-tracking">Estes Express</a></div>
+			</div>
+		  </div>
+		  <div class="visibile-xs" style="margin-bottom: 20px;"></div>
+		</div>
+	  </div>
 
-                    <!--START: shipto_address-->
-                    <div class="row">
-                        <div class="col-sm-4 col-xs-4"><label for="shipto_address">Ship-To Address:</label></div>
-                        <div class="col-sm-8 col-xs-8">[shipto_address]</div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <!--END: shipto_address-->
-                </div>
-                <div class="tracking_activity col-md-12 col-sm-12 col-xs-12">
-                    <div class="row trackingStatus_titles titles3 hidden-xs">
-                        <div class="col-md-4 col-sm-4">
-                            <label for="date-time">Date / Time</label>
-                        </div>
-                        <div class="col-md-4 col-sm-4">
-                            <label for="desc">Activity</label>
-                        </div>
-                        <div class="col-md-4 col-sm-4">
-                            <label for="loc">Location</label>
-                        </div>
-                    </div>
-                    <!--START: activity-->
-                    <div class="row trackingStatus details_row">
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="row">
-                                <div class="visible-xs col-sm-12 col-xs-4"><label for="date-time">Date / Time</label></div>
-                                <div class="col-sm-12 col-xs-8">[date_time]</div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
+	  <div class="freight-div">
+		<div class="newbar" style="margin-bottom: 0px; padding-left: 15px; padding-bottom: 25x">Track Order </div>
+				  <div class="barcontent" style="padding-top: 22px; padding-bottom: 25px; margin-bottom: 20px; padding-left: 15px; padding-right: 15px;">
+					  <!-- Tracking button UPS--> 
+		 <div class="trackingModule"> 
+						  <form method="post" action="shiptracking.asp" name="form1">
+							  <div class="trackingField">
 
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="row">
-                                <div class="visible-xs col-sm-12 col-xs-4"><label for="desc">Activity</label></div>
-                                <div class="col-sm-12 col-xs-8">[description]</div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
+									  <div class="form-group">
+										  <div class="formField">
+											  <div class="col-sm-12"><label for="trackno">UPS Tracking Number:</label></div>
+											  <div class="col-sm-12">
+												  <input type="text" size="30" name="trackno" value="[trackno]" placeholder="##########" maxlength="30" class="txtBoxStyle form-control" />
+											  </div>
+											  <div class="clearfix"></div>
+										  </div>
+										  <div class="formField ups-terms">
+											  <div class="col-sm-12">
+												  <span class="form-inline"><input type="checkbox" id="checkbox" class="checkbox" value="ON" name="agree" checked/></span>
+												  <span>
+													  <label class="terms-conditions" for="checkbox">By selecting this box and the &quot;Track Package&quot; button, I agree to these </label>
+													  <a data-toggle="modal" data-target="#viewlicense"><strong>Terms and Conditions</strong></a>.
+												  </span>
+											  </div>
+											  <div class="clearfix"></div>
+										  </div>
+										  <div class="formField">
+											  <div class="col-sm-12">
+												  <span class="view-lic-button">
+													  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#viewlicense">View License</button>
+												  </span>
+												  <span class="track-pkg-button">
+													  <input onclick="checkaccept()" type="button" value="Track Package" class="btn btn-primary btn-block" />
+												  </span>
+											  </div>
+											  <div class="clearfix"></div>
+										  </div>
+										  <div class="clearfix"></div>
+										  <div class="ups-disclaimer">
+											  <div class="col-sm-12">UPS&reg;, UPS &amp; Shield Design&reg; and UNITED PARCEL SERVICE&reg; are registered trademarks of United Parcel Service of America, Inc.</div>
+										  </div>
+									  </div>
 
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="row">
-                                <div class="visible-xs col-sm-12 col-xs-4"><label for="loc">Location</label></div>
-                                <div class="col-sm-12 col-xs-8">[location]</div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--END: activity-->
-                </div>
-            </div>
-            <!--END: results-->
-            <div class="clearfix"></div>
-            <div class="trackingModule">
-                <form method="post" action="shiptracking.asp" name="form1">
-                    <div class="trackingField">
-                        <div class="row">
-                            <div class="form-group">
-                                <div class="formField">
-                                    <div class="col-sm-12"><label for="trackno">UPS Tracking Number:</label></div>
-                                    <div class="col-sm-4">
-                                        <input type="text" size="30" name="trackno" value="[trackno]" placeholder="##########" maxlength="30" class="txtBoxStyle form-control" />
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="formField ups-terms">
-                                    <div class="col-sm-12">
-                                        <span class="form-inline"><input type="checkbox" id="checkbox" class="checkbox" value="ON" name="agree" checked/></span>
-                                        <span>
-                                            <label class="terms-conditions" for="checkbox">By selecting this box and the &quot;Track Package&quot; button, I agree to these </label>
-                                            <a data-toggle="modal" data-target="#viewlicense"><strong>Terms and Conditions</strong></a>.
-                                        </span>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="formField">
-                                    <div class="col-sm-12">
-                                        <span class="view-lic-button">
-                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#viewlicense">View License</button>
-                                        </span>
-                                        <span class="track-pkg-button">
-                                            <input onclick="checkaccept()" type="button" value="Track Package" class="btn btn-primary" />
-                                        </span>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="clearfix"></div>
-                                <div class="ups-disclaimer">
-                                    <div class="col-sm-12">UPS&reg;, UPS &amp; Shield Design&reg; and UNITED PARCEL SERVICE&reg; are registered trademarks of United Parcel Service of America, Inc.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+							  </div>
+						  </form>
+						  <a style="padding-left: 15px;" target="_blank" href="https://www.ups.com/track?loc=null&tracknum=[trackno]">Track it via UPS.com</a>
+					  </div>
+					  <!-- Tracking button --> 
+	  </div>
+	</div>
+	  <div class="freight-div">
+		<div class="newbar" style="margin-bottom: 0px; padding-left: 23px; padding-bottom: 17px; padding-top: 16px; font-size: 20px;"><strong>Freight Tracking</strong></div>
+		<div class="barcontent" style="padding-top: 12px; padding-bottom: 10px; padding-left: 26px; padding-right: 15px;">
+		  <div>
+			<div style="margin: 5px;"><a target="_blank" href="https://www.saia.com/track">Saia</a></div>
+			<div style="margin: 5px;"><a target="_blank" href="https://www.fedex.com/en-us/tracking.html">Fedex Freight</a></div>
+			<div style="margin: 5px;"><a target="_blank" href="https://www.aaacooper.com/Transit/ProTrackResults.aspx">AAA Cooper</a></div>
+			<div style="margin: 5px;"><a target="_blank" href="http://www.centraltransportint.com/confirm/trace.aspx">Central Transport</a></div>
+			<div style="margin: 5px;"><a target="_blank" href="https://sefl.com/Tracing/servlet/TRACING_TRACE_BY_PRO">Southeastern Freight Lines</a></div>
+			<div style="margin: 5px;"><a target="_blank" href="https://www.estes-express.com/myestes/shipment-tracking">Estes Express</a></div>
+		  </div>
+		</div>
+		<div class="visibile-xs" style="margin-bottom: 20px;"></div>
+	  </div>
+	</div>
+	<div class="clearfix"></div>
+  </div>
+</div>
 </section>
 
 <!-- Modal -->
 <div class="modal fade" id="viewlicense" tabindex="-1" role="dialog" aria-labelledby="viewlicenseLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="resetPWLabel"><img src="/admin/templates/images/ups_logo.gif" alt="UPS" /> UPS Tracking Terms and Conditions</h4>
-            </div>
-            <div class="modal-body">
-                <p>The UPS package tracking systems accessed via this Web Site (the &quot;Tracking Systems&quot;) and tracking information obtained through this Web Site (the &quot;Information&quot;) are the private property of UPS. UPS authorizes you to use the Tracking Systems solely to track shipments tendered by or for you to UPS for delivery and for no other purpose. Without limitation, you are not authorized to make the Information available on any web site or otherwise reproduce, distribute, copy, store, use or sell the Information for commercial gain without the express written consent of UPS. This is a personal service, thus your right to use the Tracking Systems or Information is non-assignable.</p>
-                <p>Any access or use that is inconsistent with these terms is unauthorized and strictly prohibited.</p>
-                <p>Copyright&nbsp;&copy; 1994-2003 United Parcel Service of America, Inc. All rights reserved.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+	<div class="modal-header">
+	  <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+	  <h4 class="modal-title" id="resetPWLabel"><img src="/admin/templates/images/ups_logo.gif" alt="UPS" /> UPS Tracking Terms and Conditions</h4>
+	</div>
+	<div class="modal-body">
+	  <p>The UPS package tracking systems accessed via this Web Site (the &quot;Tracking Systems&quot;) and tracking information obtained through this Web Site (the &quot;Information&quot;) are the private property of UPS. UPS authorizes you to use the Tracking Systems solely to track shipments tendered by or for you to UPS for delivery and for no other purpose. Without limitation, you are not authorized to make the Information available on any web site or otherwise reproduce, distribute, copy, store, use or sell the Information for commercial gain without the express written consent of UPS. This is a personal service, thus your right to use the Tracking Systems or Information is non-assignable.</p>
+	  <p>Any access or use that is inconsistent with these terms is unauthorized and strictly prohibited.</p>
+	  <p>Copyright&nbsp;&copy; 1994-2003 United Parcel Service of America, Inc. All rights reserved.</p>
+	</div>
+	<div class="modal-footer">
+	  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	</div>
+  </div>
+</div>
 </div>
 
-<!--START: template_scripts-->
+<!--START: template_scripts--> 
 <script type="text/javascript">
 function checkaccept() {
-	if (document.form1.agree.checked == false) {
-		alert("You must accept the UPS Tracking Terms and conditions by selecting the checkbox below.");
-		return (false);
-	} else{
-		document.form1.submit();
-	}
-	return (true);
+  if (document.form1.agree.checked == false) {
+	  alert("You must accept the UPS Tracking Terms and conditions by selecting the checkbox below.");
+	  return (false);
+  } else{
+	  document.form1.submit();
+  }
+  return (true);
 }
-</script>
-<!--END: template_scripts-->
+</script> 
+<script>
+  let activityBarDivs = document.getElementsByClassName("activity-bar")
+  let activityArr = [...activityBarDivs].reverse()
+  let activityParent = document.getElementById("activity-parent")
+
+  activityParent.append(activityArr)
+
+</script> 
+<script type="text/javascript">
+  let locationDivs = document.getElementsByClassName("location")
+
+  let locationArr = [...locationDivs]
+  locationArr.forEach(location => {
+	  location.innerText = location.innerText.split('\n').join(' ')
+  })
+</script> 
+<script type="text/javascript">
+  let progressBarDiv = document.getElementById("progressbar-div")
+  let progressBar = document.getElementById("progressbar")
+
+  let screenReaderText = document.getElementById("sr-span")
+  let statusHeading = document.getElementById("statusHeading")
+
+  let statusDivs = document.getElementsByClassName("status")
+  let statusArr = [...statusDivs]
+
+  statusHeading.innerText = statusArr[statusArr.length - 1].innerText
+
+  if(statusDivs === null) {
+	  progressBar.style.display = "none"
+	  statusHeading.style.display = "none"
+  }
+
+  if(statusHeading.innerText.includes("Delivered")) {
+	  progressBar.style.width = "100%"
+	  progressBar.setAttribute("aria-valuenow", "100")
+	  screenReaderText.innerText = "100% Complete"
+  }
+
+  if(statusHeading.innerText.includes("Out For Delivery")) {
+	  progressBar.style.width = "95%"
+	  progressBar.setAttribute("aria-valuenow", "95")
+	  screenReaderText.innerText = "95% Complete"
+  }
+
+  if(statusHeading.innerText.includes("Processing")) {
+	  progressBar.style.width = "75%"
+	  progressBar.setAttribute("aria-valuenow", "75")
+	  screenReaderText.innerText = "75% Complete"
+  }
+
+  if(statusHeading.innerText.includes("Loaded")) {
+	  progressBar.style.width = "75%"
+	  progressBar.setAttribute("aria-valuenow", "75")
+	  screenReaderText.innerText = "75% Complete"
+  }
+
+  if(statusHeading.innerText.includes("Arrived")) {
+	  progressBar.style.width = "50%"
+	  progressBar.setAttribute("aria-valuenow", "75")
+	  screenReaderText.innerText = "75% Complete"
+  }
+
+  if(statusHeading.innerText.includes("Departed")) {
+	  progressBar.style.width = "50%"
+	  progressBar.setAttribute("aria-valuenow", "50")
+	  screenReaderText.innerText = "50% Complete"
+  }
+
+  if(statusHeading.innerText.includes("Origin")) {
+	  progressBar.style.width = "30%"
+	  progressBar.setAttribute("aria-valuenow", "30")
+	  screenReaderText.innerText = "30% Complete"
+  }
+
+  if(statusHeading.innerText.includes("Package")) {
+	  progressBar.style.width = "15%"
+	  progressBar.setAttribute("aria-valuenow", "15")
+	  screenReaderText.innerText = "15% Complete"
+  }
+
+  if(statusHeading.innerText.includes("Order")) {
+	  progressBar.style.width = "5%"
+	  progressBar.setAttribute("aria-valuenow", "5")
+	  screenReaderText.innerText = "5% Complete"
+  }
+
+  if (statusHeading.innerText.includes("delayed")) {
+	  progressBar.style.width = "30%"
+	  progressBar.setAttribute("aria-valuenow", "30")
+	  screenReaderText.innerText = "30% Complete"
+	  progressBar.classList.add("progress-bar-warning")
+
+  }
+
+
+</script> 
+<!--END: template_scripts--> 
 <!--START: template_styles-->
 <link rel="stylesheet" href="/assets/templates/common-core/css/tracking.css" type="text/css" media="screen" />
 <!--END: template_styles-->
+<style>
+.freight-div{
+   display: none;
+  }
+.tracking-div-parent {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 70%) 30%;
+  padding: 15px;
+}
+.tracking-divb-parent {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 70%) 30%;
+  padding: 15px;
+}
 
+.tracking-div {
+  margin: 0 10px;
+  background: #fff;
+  box-shadow:
+  0 5px 10px rgba(0, 0, 0, 0.1),
+  0 20px 20px rgba(0, 0, 0, 0.05);
+}
+@media only screen and (max-width: 1199px) {
+.tracking-div-parent {
+  grid-template-columns: repeat(auto-fill, 100%) 0%;   
+	  }
+}
+@media only screen and (max-width: 1199px) { 
+.tracking-divb-parent {  
+  grid-template-columns: repeat(auto-fill, 100%) 0%;  
+}
+}
+@media only screen and (max-width: 1199px) {
+.freight-div {
+  display:block;
+  margin: 0 25px;
+}
+}
+</style>
